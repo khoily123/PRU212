@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 43
       width: 21
       height: 30
-    spriteID: 1d2bab6a5748c8e4bbad09d34581d54a
+    spriteID: dc3b282bce22c2f4da297f5ab423267e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -150,7 +150,7 @@ ScriptedImporter:
       y: 39
       width: 23
       height: 26
-    spriteID: 0580f1e1e983b9248949fe2dfa24bd53
+    spriteID: 50a6a0cf6af2efd4cb2ea5228f40c7a8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -170,7 +170,7 @@ ScriptedImporter:
       y: 73
       width: 23
       height: 26
-    spriteID: 76512350eae9c1a49b5cd0bd929edd1b
+    spriteID: c6cb938972cafa44d8a0b61c833f28db
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -190,7 +190,7 @@ ScriptedImporter:
       y: 4
       width: 24
       height: 27
-    spriteID: 8682d28ac32e3654784afe3f071aa480
+    spriteID: d412a58230070c044ba3213fdde20928
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -210,7 +210,7 @@ ScriptedImporter:
       y: 4
       width: 21
       height: 31
-    spriteID: dfd82704b9744044e8f06d5787e8f162
+    spriteID: c71a4739f1d50b5458eee0fef51a1e54
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -236,7 +236,7 @@ ScriptedImporter:
         y: 10
         width: 21
         height: 30
-      spriteId: 1d2bab6a5748c8e4bbad09d34581d54a
+      spriteId: dc3b282bce22c2f4da297f5ab423267e
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -245,7 +245,7 @@ ScriptedImporter:
         y: 7
         width: 23
         height: 26
-      spriteId: 0580f1e1e983b9248949fe2dfa24bd53
+      spriteId: 50a6a0cf6af2efd4cb2ea5228f40c7a8
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -254,7 +254,7 @@ ScriptedImporter:
         y: 7
         width: 23
         height: 26
-      spriteId: 76512350eae9c1a49b5cd0bd929edd1b
+      spriteId: c6cb938972cafa44d8a0b61c833f28db
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -263,7 +263,7 @@ ScriptedImporter:
         y: 7
         width: 24
         height: 27
-      spriteId: 8682d28ac32e3654784afe3f071aa480
+      spriteId: d412a58230070c044ba3213fdde20928
     - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
@@ -272,7 +272,7 @@ ScriptedImporter:
         y: 7
         width: 21
         height: 31
-      spriteId: dfd82704b9744044e8f06d5787e8f162
+      spriteId: c71a4739f1d50b5458eee0fef51a1e54
     linkedCells: []
     parentIndex: -1
   platformSettings:
