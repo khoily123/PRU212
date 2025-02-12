@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Map
+    uniqueID: 3544871585
+    locked: 0
+  - name: Road
+    uniqueID: 3041912345
+    locked: 0
+  - name: BackGround
+    uniqueID: 2152482735
+    locked: 0
