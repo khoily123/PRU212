@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d683263638e5ead4a8c876bcc30c7cf4
+guid: 15565f0750f786f4b82638f83d9b83a3
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 40
       width: 24
       height: 29
-    spriteID: 145ef448ab375044abaa708dab6999e1
+    spriteID: bf49dd2732d6d0d46837c0b830622b43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -150,7 +150,7 @@ ScriptedImporter:
       y: 4
       width: 27
       height: 28
-    spriteID: 3cce2563f1f38ac41aec2c99d3bab165
+    spriteID: eddf8883ae3db76449bb2a27c6ccff93
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -170,7 +170,7 @@ ScriptedImporter:
       y: 40
       width: 22
       height: 33
-    spriteID: 7fe226b05687b6248b1ce924967f3d46
+    spriteID: 117539aff074f7e4085026ce24f25ce3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -190,7 +190,7 @@ ScriptedImporter:
       y: 81
       width: 22
       height: 33
-    spriteID: 67e888dd1f6d8094bb21a3733584bdd9
+    spriteID: 18e88a00929083242852aaf117f75ddc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -216,7 +216,7 @@ ScriptedImporter:
         y: 7
         width: 24
         height: 29
-      spriteId: 145ef448ab375044abaa708dab6999e1
+      spriteId: bf49dd2732d6d0d46837c0b830622b43
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -225,7 +225,7 @@ ScriptedImporter:
         y: 9
         width: 27
         height: 28
-      spriteId: 3cce2563f1f38ac41aec2c99d3bab165
+      spriteId: eddf8883ae3db76449bb2a27c6ccff93
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -234,7 +234,7 @@ ScriptedImporter:
         y: 10
         width: 22
         height: 33
-      spriteId: 7fe226b05687b6248b1ce924967f3d46
+      spriteId: 117539aff074f7e4085026ce24f25ce3
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -243,7 +243,7 @@ ScriptedImporter:
         y: 10
         width: 22
         height: 33
-      spriteId: 67e888dd1f6d8094bb21a3733584bdd9
+      spriteId: 18e88a00929083242852aaf117f75ddc
     linkedCells: []
     parentIndex: -1
   platformSettings:
