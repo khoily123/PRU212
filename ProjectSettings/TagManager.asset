@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Road
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Road
   - Water
   - UI
   - 
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: BackGround
     uniqueID: 2152482735
+    locked: 0
+  - name: Enemy
+    uniqueID: 2739372945
     locked: 0
