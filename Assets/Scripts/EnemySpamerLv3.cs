@@ -6,7 +6,7 @@ public class EnemySpamerLv3 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject kingBerserker; // Assign your enemy prefab in the Inspector
-    private float spawnRate = 1.0f; // Time in seconds between each spawn
+    private float spawnRate = 1.5f; // Time in seconds between each spawn
     private int maxEnemies = 10; // Maximum number of enemies to spawn
     private int currentEnemies = 0; // Current number of spawned enemies
     public Transform[] waypoints;
