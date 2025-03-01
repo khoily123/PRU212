@@ -10,6 +10,7 @@ public class king_enemy_move : MonoBehaviour
     public float speed = 2.0f;
     private float minDistance = 0.1f;
     private Animator animator;
+    public float health = 50f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,11 @@ public class king_enemy_move : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        Move();
+    }
+
+    void Move()
     {
         Transform targetWaypoint = waypoints[currentWaypointIndex];
         Vector3 movementDirection = (targetWaypoint.position - transform.position).normalized;
@@ -70,5 +76,19 @@ public class king_enemy_move : MonoBehaviour
                 animator.SetFloat("move", 3.1f); // Di chuyển xuống dưới
             }
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
