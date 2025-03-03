@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1555594351
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: f98fab1f2fcadf140aacc5c4387b7070, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f98fab1f2fcadf140aacc5c4387b7070, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -154,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f98fab1f2fcadf140aacc5c4387b7070, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f98fab1f2fcadf140aacc5c4387b7070, type: 3}
       propertyPath: m_LocalPosition.z
@@ -209,11 +213,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5478550180871112891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8997b0ef2c8f49b439a22ef18df8eca4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cdc82bff7c636d4a96e86520d3dcc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5462248987669433870, guid: 79a636a318214b84ca8632622e275ebf, type: 3}
-  firePoint: {fileID: 8648414262551705319}
+  firePoint: {fileID: 4749682232912650462}
   fireRate: 1
   damage: 10
-  range: 10
+  range: 2

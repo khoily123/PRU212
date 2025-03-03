@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5462248987669433870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.083513, y: -1.880458, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5462248987669433870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f77857069c95dd14eaae9af737e962eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5226b89fcd27b1c4288393378ff4145c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  explosionEffect: {fileID: 3347746756170645729, guid: bc1f95b8ca271324dac9fe9a0754b698, type: 3}
+  speed: 10
+  explosionEffect: {fileID: 5663161729881368585, guid: a997d8b086061874f9693d6c876af6bc, type: 3}

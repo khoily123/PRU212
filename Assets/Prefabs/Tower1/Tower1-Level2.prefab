@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
       propertyPath: m_LocalPosition.z
@@ -195,3 +195,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
   m_PrefabInstance: {fileID: 1080676708505707543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7946367268789334911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
+  m_PrefabInstance: {fileID: 1080676708505707543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &483069161402230522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946367268789334911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6082f5c0b50b1874b9a8704c761c616c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2407551749547140476, guid: 61a562af1ef247b498790508c9a50a0a, type: 3}
+  firePoint: {fileID: 7181781677012491034}
+  fireRate: 1
+  damage: 10
+  range: 2

@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public abstract class BulletAbstract : MonoBehaviour
 {
-    public float speed = 6f;
-    private king_enemy_move target;
+    public float speed = 10f;
+    private EnemyAbstract target;
     private float damage;
     private Vector3 direction;
     public GameObject explosionEffect;
 
-    public void SetTarget(king_enemy_move enemy, float dmg)
+    public void SetTarget(EnemyAbstract enemy, float dmg)
     {
         target = enemy;
         damage = dmg;
@@ -30,7 +32,7 @@ public class Bullet : MonoBehaviour
         // Di chuy?n ??n v? phía m?c tiêu
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
+        if (Vector3.Distance(transform.position, target.transform.position) < 0.01f)
         {
             Explode();
             target.TakeDamage(damage);
@@ -51,8 +53,15 @@ public class Bullet : MonoBehaviour
     {
         if (explosionEffect != null)
         {
-            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Destroy(explosion, 1f); // 🌟 Hủy hiệu ứng sau 1 giây
+            GameObject explosion = Instantiate(explosionEffect, transform.position + new Vector3(0, -1.0f, 0), Quaternion.identity);
+
+            // Kiểm tra xem hiệu ứng có Animator không
+            Animator explosionAnimator = explosion.GetComponent<Animator>();
+            if (explosionAnimator != null)
+            {
+                explosionAnimator.speed = 3f; // 🌟 Tăng tốc độ animation gấp 2 lần
+            }
+            Destroy(explosion, 0.15f);
         }
     }
 }

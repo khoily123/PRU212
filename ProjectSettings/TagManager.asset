@@ -55,3 +55,6 @@ TagManager:
   - name: Enemy
     uniqueID: 2739372945
     locked: 0
+  - name: Explosion
+    uniqueID: 894228935
+    locked: 0

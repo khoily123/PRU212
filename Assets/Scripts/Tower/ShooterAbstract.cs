@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public abstract class ShooterAbstract : MonoBehaviour
 {
     public GameObject bulletPrefab;  // Prefab đạn
     public Transform firePoint;  // Vị trí bắn
@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     public float damage = 10f;  // Sát thương của tower
     public float range = 2f;  // Phạm vi tấn công
 
-    private List<king_enemy_move> enemiesInRange = new List<king_enemy_move>();
+    private List<EnemyAbstract> enemiesInRange = new List<EnemyAbstract>();
     private float fireCooldown = 0f;
 
     void Start()
@@ -33,20 +33,26 @@ public class Shoot : MonoBehaviour
     }
 
 
-    void ShootEnemy(king_enemy_move target)
+    void ShootEnemy(EnemyAbstract target)
     {
         if (target == null) return;
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        bulletScript.SetTarget(target, damage);
+        BulletAbstract bulletScript = bullet.GetComponent<BulletAbstract>();
+        bulletScript.SetTarget(target, ChangeDamageBaseOnLevel());
+
+        // 🌟 Lấy góc quay của viên đạn và gán cho tower
+        float bulletAngle = bullet.transform.rotation.eulerAngles.z;
+        transform.rotation = Quaternion.Euler(0, 0, bulletAngle);
     }
+
+    public abstract float ChangeDamageBaseOnLevel();
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-            enemiesInRange.Add(other.GetComponent<king_enemy_move>());
+            enemiesInRange.Add(other.GetComponent<EnemyAbstract>());
         }
     }
 
@@ -54,12 +60,11 @@ public class Shoot : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            king_enemy_move enemy = other.GetComponent<king_enemy_move>();
+            EnemyAbstract enemy = other.GetComponent<EnemyAbstract>();
             if (enemiesInRange.Contains(enemy))
             {
                 enemiesInRange.Remove(enemy);
             }
         }
     }
-
 }
