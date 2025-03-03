@@ -28,7 +28,7 @@ public class EnemySpamerLv3 : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnRate);
             GameObject newKing = Instantiate(kingBerserker, transform.position, Quaternion.identity);
-            newKing.GetComponent<king_enemy_move>().waypoints = waypoints;
+            newKing.GetComponent<king_enemy>().waypoints = waypoints;
             currentEnemies++;
         }
     }

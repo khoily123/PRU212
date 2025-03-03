@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class king_enemy_move : MonoBehaviour
+public abstract class EnemyAbstract : MonoBehaviour
 {
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
-    public float speed = 2.0f;
-    private float minDistance = 0.1f;
+    public float speed = 2.0f; // default
+    private float minDistance = 0.1f; // default
     private Animator animator;
+    public float health = 50f; // default
 
-    // Start is called before the first frame update
     void Start()
     {
         transform.position = waypoints[0].position; // Đặt Goblin ở waypoint đầu tiên
@@ -19,8 +18,12 @@ public class king_enemy_move : MonoBehaviour
         animator.SetBool("gameStart", true);
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        Move();
+    }
+
+    void Move()
     {
         Transform targetWaypoint = waypoints[currentWaypointIndex];
         Vector3 movementDirection = (targetWaypoint.position - transform.position).normalized;
@@ -70,5 +73,19 @@ public class king_enemy_move : MonoBehaviour
                 animator.SetFloat("move", 3.1f); // Di chuyển xuống dưới
             }
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
