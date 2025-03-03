@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class EnemyAbstract : MonoBehaviour
 {
@@ -10,17 +11,23 @@ public abstract class EnemyAbstract : MonoBehaviour
     private float minDistance = 0.1f; // default
     private Animator animator;
     public float health = 50f; // default
-
+    public Slider healthBar;
     void Start()
     {
         transform.position = waypoints[0].position; // Đặt Goblin ở waypoint đầu tiên
         animator = GetComponent<Animator>();
         animator.SetBool("gameStart", true);
+        if (healthBar != null)
+        {
+            healthBar.maxValue = health;
+            healthBar.value = health;
+        }
     }
 
     void Update()
     {
         Move();
+        UpdateHealthBar();
     }
 
     void Move()
@@ -78,9 +85,23 @@ public abstract class EnemyAbstract : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+
+        if (healthBar != null)
+        {
+            healthBar.value = health;
+        }
         if (health <= 0)
         {
             Die();
+        }
+    }
+
+    void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
+            healthBar.transform.position = screenPos;
         }
     }
 

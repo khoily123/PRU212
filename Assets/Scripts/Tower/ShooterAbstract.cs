@@ -12,12 +12,14 @@ public abstract class ShooterAbstract : MonoBehaviour
 
     private List<EnemyAbstract> enemiesInRange = new List<EnemyAbstract>();
     private float fireCooldown = 0f;
-
+    private Animator animator;
+    private EnemyAbstract currentTarget;
     void Start()
     {
         CircleCollider2D rangeCollider = gameObject.AddComponent<CircleCollider2D>();
         rangeCollider.radius = range;
         rangeCollider.isTrigger = true;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -27,24 +29,38 @@ public abstract class ShooterAbstract : MonoBehaviour
         // 🔥 Chỉ bắn nếu còn enemy trong danh sách
         if (fireCooldown <= 0f && enemiesInRange.Count > 0)
         {
-            ShootEnemy(enemiesInRange[0]);
-            fireCooldown = 1f / fireRate;
+            currentTarget = enemiesInRange[0]; // Chọn mục tiêu
+            ShootEnemy2(); // Bắn
+            fireCooldown = 1f / fireRate; // Đặt lại thời gian cooldown
         }
+        else if(enemiesInRange.Count == 0)
+        {
+            animator.SetBool("IsFire", false);
+        }
+    }
+    public void ShootEnemy2()
+    {
+        if (currentTarget == null) return;
+        animator.SetTrigger("Shoot"); // Kích hoạt animation bắn
+
+        ShootEnemy(currentTarget); // Gọi lại hàm gốc với mục tiêu hiện tại
     }
 
 
     void ShootEnemy(EnemyAbstract target)
-    {
-        if (target == null) return;
-
+        {
+            if (target == null) return;
+        animator.SetBool("IsFire", true);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        BulletAbstract bulletScript = bullet.GetComponent<BulletAbstract>();
-        bulletScript.SetTarget(target, ChangeDamageBaseOnLevel());
+            BulletAbstract bulletScript = bullet.GetComponent<BulletAbstract>();
+            bulletScript.SetTarget(target, ChangeDamageBaseOnLevel());
 
-        // 🌟 Lấy góc quay của viên đạn và gán cho tower
-        float bulletAngle = bullet.transform.rotation.eulerAngles.z;
-        transform.rotation = Quaternion.Euler(0, 0, bulletAngle);
-    }
+            // 🌟 Lấy góc quay của viên đạn và gán cho tower
+            float bulletAngle = bullet.transform.rotation.eulerAngles.z;
+            transform.rotation = Quaternion.Euler(0, 0, bulletAngle);
+        }
+
+   
 
     public abstract float ChangeDamageBaseOnLevel();
 
@@ -66,5 +82,6 @@ public abstract class ShooterAbstract : MonoBehaviour
                 enemiesInRange.Remove(enemy);
             }
         }
+       
     }
 }
