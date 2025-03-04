@@ -17,6 +17,7 @@ public abstract class EnemyAbstract : MonoBehaviour
         transform.position = waypoints[0].position; // Đặt Goblin ở waypoint đầu tiên
         animator = GetComponent<Animator>();
         animator.SetBool("gameStart", true);
+        animator.SetBool("isDead", false);
         if (healthBar != null)
         {
             healthBar.maxValue = health;
@@ -85,7 +86,7 @@ public abstract class EnemyAbstract : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-
+        animator.SetTrigger("takeDame");
         if (healthBar != null)
         {
             healthBar.value = health;
@@ -107,6 +108,16 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     void Die()
     {
+        animator.SetBool("isDead", true);
+        speed = 0; // Ngăn di chuyển khi chết
+        StartCoroutine(WaitForDeathAnimation());
+
+    }
+
+    IEnumerator WaitForDeathAnimation()
+    {
+        // Đợi cho đến khi animation "Dead" kết thúc trước khi hủy đối tượng
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
     }
 }
