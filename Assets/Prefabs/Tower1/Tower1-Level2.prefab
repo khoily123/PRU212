@@ -128,6 +128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower 01 - Level 02 - Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2fe85971b4431744ea6139d3a9ec2721, type: 2}
     - target: {fileID: 3626916397498700004, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
       propertyPath: m_SortingLayer
       value: 4
