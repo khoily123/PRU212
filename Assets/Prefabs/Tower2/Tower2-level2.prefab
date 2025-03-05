@@ -128,6 +128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower 02 - Level 02 - Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: ee60a9e3b8c95fd4782bc1e18f36e01c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e26d0c4115f41b147a050a117e4249d2, type: 2}
     - target: {fileID: 3626916397498700004, guid: ee60a9e3b8c95fd4782bc1e18f36e01c, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -195,3 +199,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: ee60a9e3b8c95fd4782bc1e18f36e01c, type: 3}
   m_PrefabInstance: {fileID: 7910587209253911625}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &968399779156208417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: ee60a9e3b8c95fd4782bc1e18f36e01c, type: 3}
+  m_PrefabInstance: {fileID: 7910587209253911625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5479038255475027599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968399779156208417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccbb97d03e499247a3b141071def38e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4225628887014876094, guid: 8edfa2c09d1fd7b4881147bd4bdb12c0, type: 3}
+  firePoint: {fileID: 44342172013265732}
+  fireRate: 1
+  damage: 10
+  range: 2
