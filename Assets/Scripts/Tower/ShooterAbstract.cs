@@ -9,22 +9,33 @@ public abstract class ShooterAbstract : MonoBehaviour
     public float fireRate = 1f;  // Số lần bắn mỗi giây
     public float damage = 10f;  // Sát thương của tower
     public float range = 2f;  // Phạm vi tấn công
+    private bool isPlaced = false;
 
     private List<EnemyAbstract> enemiesInRange = new List<EnemyAbstract>();
     private float fireCooldown = 0f;
     private Animator animator;
     private EnemyAbstract currentTarget;
+
     void Start()
     {
         CircleCollider2D rangeCollider = gameObject.AddComponent<CircleCollider2D>();
         rangeCollider.radius = range;
         rangeCollider.isTrigger = true;
-        animator = GetComponent<Animator>();
+    }
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>(); // 🔥 Gán trong Awake để đảm bảo không null
     }
 
     void Update()
     {
         fireCooldown -= Time.deltaTime;
+
+        if (!isPlaced)
+        {
+            return;
+        }
 
         // 🔥 Chỉ bắn nếu còn enemy trong danh sách
         if (fireCooldown <= 0f && enemiesInRange.Count > 0)
@@ -33,34 +44,44 @@ public abstract class ShooterAbstract : MonoBehaviour
             ShootEnemy2(); // Bắn
             fireCooldown = 1f / fireRate; // Đặt lại thời gian cooldown
         }
-        else if(enemiesInRange.Count == 0)
+        else if (enemiesInRange.Count == 0)
         {
             animator.SetBool("IsFire", false);
         }
     }
+
+    public void SetPlaced(bool placed)
+    {
+        isPlaced = placed;
+
+        if (animator == null)
+        {
+            Debug.LogError("Animator is NULL in ShooterAbstract!", this);
+            return;
+        }
+
+        animator.enabled = placed;  // ❌ Dừng khi chưa đặt, ✅ Bật lại khi đặt xong
+    }
+
     public void ShootEnemy2()
     {
         if (currentTarget == null) return;
         animator.SetTrigger("Shoot"); // Kích hoạt animation bắn
-
         ShootEnemy(currentTarget); // Gọi lại hàm gốc với mục tiêu hiện tại
     }
 
-
     void ShootEnemy(EnemyAbstract target)
-        {
-            if (target == null) return;
+    {
+        if (target == null) return;
         animator.SetBool("IsFire", true);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            BulletAbstract bulletScript = bullet.GetComponent<BulletAbstract>();
-            bulletScript.SetTarget(target, ChangeDamageBaseOnLevel());
+        BulletAbstract bulletScript = bullet.GetComponent<BulletAbstract>();
+        bulletScript.SetTarget(target, ChangeDamageBaseOnLevel());
 
-            // 🌟 Lấy góc quay của viên đạn và gán cho tower
-            float bulletAngle = bullet.transform.rotation.eulerAngles.z;
-            transform.rotation = Quaternion.Euler(0, 0, bulletAngle);
-        }
-
-   
+        // 🌟 Lấy góc quay của viên đạn và gán cho tower
+        float bulletAngle = bullet.transform.rotation.eulerAngles.z;
+        transform.rotation = Quaternion.Euler(0, 0, bulletAngle);
+    }
 
     public abstract float ChangeDamageBaseOnLevel();
 
@@ -82,6 +103,5 @@ public abstract class ShooterAbstract : MonoBehaviour
                 enemiesInRange.Remove(enemy);
             }
         }
-       
     }
 }

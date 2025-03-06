@@ -45,6 +45,11 @@ public class TowerManager : MonoBehaviour
             if (towerPreview == null)
             {
                 towerPreview = Instantiate(selectedTower, snapPosition, Quaternion.identity);
+                ShooterAbstract previewShooter = towerPreview.GetComponentInChildren<ShooterAbstract>();
+                if (previewShooter != null)
+                {
+                    previewShooter.SetPlaced(false);
+                }
                 SetTowerAlpha(towerPreview, 0.5f); // Đặt alpha thấp để làm preview
             }
             else
@@ -54,7 +59,16 @@ public class TowerManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && CanPlaceTower(cellPosition))
             {
-                Instantiate(selectedTower, snapPosition, Quaternion.identity);
+                GameObject towerInstance = Instantiate(selectedTower, snapPosition, Quaternion.identity);
+
+                // 🔥 Tìm Shooter trong các con của towerInstance
+                ShooterAbstract shooter = towerInstance.GetComponentInChildren<ShooterAbstract>();
+
+                if (shooter != null)
+                {
+                    shooter.SetPlaced(true); // ✅ Chỉ kích hoạt phần bắn
+                }
+
                 Destroy(towerPreview);
                 towerPreview = null;
                 selectedTower = null;
