@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpamerLV4 : MonoBehaviour
+public class EnemySpamerLevel4 : MonoBehaviour
 {
-public GameObject kingRider; // Prefab quái
+    public GameObject kingRider; // Prefab quái
     public Transform[] waypoints;
 
     private float spawnRate = 1.5f; // Thời gian giữa mỗi lần spawn
@@ -29,7 +29,7 @@ public GameObject kingRider; // Prefab quái
             {
                 yield return new WaitForSeconds(spawnRate);
                 GameObject newKing = Instantiate(kingRider, transform.position, Quaternion.identity);
-                newKing.GetComponent<goblinRider>().waypoints = waypoints;
+                newKing.GetComponent<king_enemy>().waypoints = waypoints;
                 currentEnemies++;
             }
 
