@@ -10,7 +10,7 @@ public class TowerManager : MonoBehaviour
     public Tile highlightGreen; // Tile highlight xanh (được đặt)
     public Tile highlightRed; // Tile highlight đỏ (không được đặt)
     public GameObject towerSelectionPopup; // Popup UI chọn Tower
-
+    public Tilemap roadTilemap;
     private GameObject selectedTower; // Tower đang chọn
     private GameObject towerPreview; // Hiển thị trước khi đặt
 
@@ -81,7 +81,10 @@ public class TowerManager : MonoBehaviour
 
     private bool CanPlaceTower(Vector3Int cellPosition)
     {
-        return gridTilemap.GetTile(cellPosition) != null;
+        TileBase roadTile = roadTilemap.GetTile(cellPosition);  // Kiểm tra xem có tile đường ở vị trí này không
+        TileBase backgroundTile = gridTilemap.GetTile(cellPosition); // Kiểm tra xem có tile nền ở vị trí này không
+
+        return backgroundTile != null && roadTile == null; // Chỉ cho phép đặt tháp nếu có tile nền và không có tile đường
     }
 
     private void CancelTowerPlacement()
