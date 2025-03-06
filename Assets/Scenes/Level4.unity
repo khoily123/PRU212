@@ -193,8 +193,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 401020427
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -53792,7 +53792,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -40.54, y: 17.36}
-  m_SizeDelta: {x: 2, y: 2}
+  m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799874846
 MonoBehaviour:
@@ -54449,10 +54449,11 @@ MonoBehaviour:
   - {fileID: 6211282614664106142, guid: 2836f92b76c205f48b415fac290f973b, type: 3}
   - {fileID: 8362318004551401701, guid: 1083401df37d41643bf772067780792d, type: 3}
   gridTilemap: {fileID: 363643734}
-  highlightTilemap: {fileID: 220681751}
+  highlightTilemap: {fileID: 49481442}
   highlightGreen: {fileID: 11400000, guid: 761c96f544c42834b90c69efabf3ffa2, type: 2}
   highlightRed: {fileID: 11400000, guid: 6a53512748fe89e4fb88fde5bea71676, type: 2}
   towerSelectionPopup: {fileID: 182799557}
+  roadTilemap: {fileID: 220681751}
 --- !u!4 &1434858804
 Transform:
   m_ObjectHideFlags: 0

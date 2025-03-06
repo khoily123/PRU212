@@ -162,7 +162,7 @@ MonoBehaviour:
   waypoints: []
   speed: 2
   health: 40
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 7029415634762116773}
 --- !u!1 &2075436632959419567
 GameObject:
   m_ObjectHideFlags: 0
