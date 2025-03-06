@@ -120,4 +120,19 @@ public abstract class EnemyAbstract : MonoBehaviour
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
     }
+
+    public void ReduceSpeed(float factor, float duration)
+    {
+        StartCoroutine(SlowDown(factor, duration));
+    }
+
+    IEnumerator SlowDown(float factor, float duration)
+    {
+        float originalSpeed = speed;
+        speed *= factor; // Giảm tốc độ xuống theo tỷ lệ
+
+        yield return new WaitForSeconds(duration); // Đợi trong một khoảng thời gian
+
+        speed = originalSpeed; // Khôi phục tốc độ ban đầu
+    }
 }
