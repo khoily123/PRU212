@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BulletAbstract : MonoBehaviour
 {
     public float speed = 10f;
-    private EnemyAbstract target;
+    protected EnemyAbstract target; // Removed 'virtual' modifier
     private float damage;
     private Vector3 direction;
     public GameObject explosionEffect;
@@ -49,7 +49,7 @@ public abstract class BulletAbstract : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // -90f để mũi tên hướng đúng
     }
 
-    void Explode()
+    protected virtual void Explode()
     {
         if (explosionEffect != null)
         {
