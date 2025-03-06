@@ -1,35 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class EnemySpamerLv3 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject kingBerserker; // Assign your enemy prefab in the Inspector
-    private float spawnRate = 1.5f; // Time in seconds between each spawn
-    private int maxEnemies = 10; // Maximum number of enemies to spawn
-    private int currentEnemies = 0; // Current number of spawned enemies
+    public GameObject kingBerserker; // Prefab quái
     public Transform[] waypoints;
+
+    private float spawnRate = 1.5f; // Thời gian giữa mỗi lần spawn
+    private int maxEnemies = 10; // Số quái mỗi wave
+    private int currentEnemies = 0; // Đếm số quái hiện tại
+    private int maxWaves = 15; // Tổng số wave
+    private int currentWave = 0; // Đếm wave hiện tại
 
     void Start()
     {
-        StartCoroutine(SpawnKingEnemyBerserker());
+        StartCoroutine(SpawnWaves());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SpawnWaves()
     {
-        
-    }
-
-    private IEnumerator SpawnKingEnemyBerserker()
-    {
-        while (currentEnemies < maxEnemies)
+        while (currentWave < maxWaves) // Lặp 15 wave
         {
-            yield return new WaitForSeconds(spawnRate);
-            GameObject newKing = Instantiate(kingBerserker, transform.position, Quaternion.identity);
-            newKing.GetComponent<king_enemy>().waypoints = waypoints;
-            currentEnemies++;
+            currentWave++;
+            currentEnemies = 0; // Reset số quái
+
+            while (currentEnemies < maxEnemies) // Sinh quái trong wave hiện tại
+            {
+                yield return new WaitForSeconds(spawnRate);
+                GameObject newKing = Instantiate(kingBerserker, transform.position, Quaternion.identity);
+                newKing.GetComponent<king_enemy>().waypoints = waypoints;
+                currentEnemies++;
+            }
+
+            Debug.Log($"Wave {currentWave} đã kết thúc! Đợi 5 giây...");
+            yield return new WaitForSeconds(1f); // Chờ 30s trước khi bắt đầu wave mới
         }
+
+        Debug.Log("Tất cả 15 wave đã hoàn thành!");
     }
 }
