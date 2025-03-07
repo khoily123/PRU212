@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
@@ -13,10 +15,12 @@ public class TowerManager : MonoBehaviour
     public Tilemap roadTilemap;
     private GameObject selectedTower; // Tower đang chọn
     private GameObject towerPreview; // Hiển thị trước khi đặt
+    public int[] towerCosts; //giá của các tháp
+    public bool isPopupActive = false;
 
     void Start()
     {
-        towerSelectionPopup.SetActive(false); // Ẩn popup khi game bắt đầu
+        towerSelectionPopup.SetActive(isPopupActive); // Ẩn popup khi game bắt đầu
     }
 
     void Update()
@@ -59,20 +63,31 @@ public class TowerManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && CanPlaceTower(cellPosition))
             {
-                GameObject towerInstance = Instantiate(selectedTower, snapPosition, Quaternion.identity);
 
-                // 🔥 Tìm Shooter trong các con của towerInstance
-                ShooterAbstract shooter = towerInstance.GetComponentInChildren<ShooterAbstract>();
-
-                if (shooter != null)
+                if (GoldManage.Instance.CanAfford(towerCosts[Array.IndexOf(towerPrefabs, selectedTower)]))
                 {
-                    shooter.SetPlaced(true); // ✅ Chỉ kích hoạt phần bắn
+                    GoldManage.Instance.SpendGold(towerCosts[Array.IndexOf(towerPrefabs, selectedTower)]);
+                    GameObject towerInstance = Instantiate(selectedTower, snapPosition, Quaternion.identity);
+                    ShooterAbstract shooter = towerInstance.GetComponentInChildren<ShooterAbstract>();
+                    // 🔥 Tìm Shooter trong các con của towerInstance
+
+                    if (shooter != null)
+                    {
+                        shooter.SetPlaced(true); // ✅ Chỉ kích hoạt phần bắn
+                    }
+
+                    Destroy(towerPreview);
+                    towerPreview = null;
+                    selectedTower = null;
+                    highlightTilemap.ClearAllTiles();
+                }
+                else
+                {
+                    Debug.Log("Not enough gold!");
+                    return;
                 }
 
-                Destroy(towerPreview);
-                towerPreview = null;
-                selectedTower = null;
-                highlightTilemap.ClearAllTiles();
+                
             }
 
             if (Input.GetMouseButtonDown(1)) // Nhấn chuột phải để hủy chọn
@@ -84,13 +99,31 @@ public class TowerManager : MonoBehaviour
 
     public void ShowTowerSelection()
     {
-        towerSelectionPopup.SetActive(true); // Hiển thị popup
+        if(isPopupActive)
+        {
+            isPopupActive = false;
+            towerSelectionPopup.SetActive(isPopupActive);
+        }
+        else
+        {
+            isPopupActive = true;
+            towerSelectionPopup.SetActive(isPopupActive);
+        }
     }
 
     public void SelectTower(int index)
     {
-        selectedTower = towerPrefabs[index];
-        towerSelectionPopup.SetActive(false); // Ẩn popup sau khi chọn
+        if (GoldManage.Instance.CanAfford(towerCosts[index]))
+        {
+            selectedTower = towerPrefabs[index];
+            ShowTowerSelection();
+        }
+        else
+        {
+            Debug.Log("Not enough gold!");
+            return;
+        }
+        
     }
 
     private bool CanPlaceTower(Vector3Int cellPosition)
