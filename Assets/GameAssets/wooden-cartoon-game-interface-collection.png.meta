@@ -1,0 +1,661 @@
+fileFormatVersion: 2
+guid: 22e5016e61d9ed24cae7ba50b2f03c82
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_0
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1573
+        width: 251
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3935f2b97d578134bba3d3139ae9088b
+      internalID: -518479498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1403
+        width: 250
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a68939adcf9cb244acb18d4d8bf41fd
+      internalID: 782593888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_2
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1573
+        width: 252
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe10c49513e0ab4dbe5286a6a48bec4
+      internalID: 1806463449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_3
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1403
+        width: 250
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef24c0aaefeb0fc49ae82078eb3a34d1
+      internalID: 2141705059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_4
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1573
+        width: 251
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70de528269daf3b429bb575ed31da179
+      internalID: -148856318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_5
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1403
+        width: 252
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c87150a48d1cc4d802670368dd9174
+      internalID: -1280210685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_6
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1573
+        width: 250
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb477a73cee37d4e96f421f6271e1d2
+      internalID: 215380349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_7
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1403
+        width: 251
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59bae7464b4c234191d92a81e9eb955
+      internalID: -1513619685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_8
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1573
+        width: 250
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ba4429d7936114da22ab4b2a127aaf
+      internalID: 390438797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_9
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1124
+        width: 545
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a7815237d0c494bbdecb64be6cb466
+      internalID: -1381364079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_10
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1124
+        width: 545
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f721ce01bb9247247ba3eb1b98c930d6
+      internalID: 373882010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_11
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1124
+        width: 545
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a8432205725c843b372af95e8c03fb
+      internalID: 1723338634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 899
+        width: 545
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0006e4936f0ed4945ad8172ff2aa0901
+      internalID: -1452398160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_13
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 899
+        width: 545
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47c24fea141f0240985b09a279ffb15
+      internalID: -914093766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_14
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 899
+        width: 545
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd94a1e80c694a4c9c1076660962e3e
+      internalID: -1553288959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_15
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 650
+        width: 545
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37fd270a5cdc30438f12af308abe16c
+      internalID: -1218405612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_16
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 650
+        width: 545
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940a0cc0560d5404e85a8c776fc0c2cf
+      internalID: 423689712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_17
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 650
+        width: 545
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f17d8cc27485443b2d9d85a35f7388
+      internalID: 1761454854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_18
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 474
+        width: 113
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b56bd2e8efc6a4ba26a34a65ba625d
+      internalID: 1759907708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_19
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 489
+        width: 567
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f9312b409b1544e883c84bab1a8370
+      internalID: -269077975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_20
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 142
+        width: 928
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7289560c9eb456741839a9420923384e
+      internalID: -18478849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_21
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 338
+        width: 168
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d0a71da041bd04e9019e991ff0293d
+      internalID: 2037560900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_22
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 354
+        width: 566
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1fbfbb97959b34ab8e9ee715cc19ac
+      internalID: 303109193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_23
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 206
+        width: 155
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca6f70fa6a2c804dbc8f88857312600
+      internalID: -84209304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-cartoon-game-interface-collection_24
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 220
+        width: 568
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8e138d39cfce94a862618df68ee425
+      internalID: -1780778881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      wooden-cartoon-game-interface-collection_0: -518479498
+      wooden-cartoon-game-interface-collection_1: 782593888
+      wooden-cartoon-game-interface-collection_10: 373882010
+      wooden-cartoon-game-interface-collection_11: 1723338634
+      wooden-cartoon-game-interface-collection_12: -1452398160
+      wooden-cartoon-game-interface-collection_13: -914093766
+      wooden-cartoon-game-interface-collection_14: -1553288959
+      wooden-cartoon-game-interface-collection_15: -1218405612
+      wooden-cartoon-game-interface-collection_16: 423689712
+      wooden-cartoon-game-interface-collection_17: 1761454854
+      wooden-cartoon-game-interface-collection_18: 1759907708
+      wooden-cartoon-game-interface-collection_19: -269077975
+      wooden-cartoon-game-interface-collection_2: 1806463449
+      wooden-cartoon-game-interface-collection_20: -18478849
+      wooden-cartoon-game-interface-collection_21: 2037560900
+      wooden-cartoon-game-interface-collection_22: 303109193
+      wooden-cartoon-game-interface-collection_23: -84209304
+      wooden-cartoon-game-interface-collection_24: -1780778881
+      wooden-cartoon-game-interface-collection_3: 2141705059
+      wooden-cartoon-game-interface-collection_4: -148856318
+      wooden-cartoon-game-interface-collection_5: -1280210685
+      wooden-cartoon-game-interface-collection_6: 215380349
+      wooden-cartoon-game-interface-collection_7: -1513619685
+      wooden-cartoon-game-interface-collection_8: 390438797
+      wooden-cartoon-game-interface-collection_9: -1381364079
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

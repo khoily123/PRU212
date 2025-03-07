@@ -15,6 +15,8 @@ public abstract class ShooterAbstract : MonoBehaviour
     private float fireCooldown = 0f;
     private Animator animator;
     private EnemyAbstract currentTarget;
+    private AudioSource audioSource;  // 🎵 Âm thanh bắn đạn
+    public AudioClip shootSound;  // 🔥 Kéo file âm thanh vào đây trong Inspector
 
     void Start()
     {
@@ -25,7 +27,9 @@ public abstract class ShooterAbstract : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<Animator>(); // 🔥 Gán trong Awake để đảm bảo không null
+        animator = GetComponent<Animator>();
+        audioSource = gameObject.AddComponent<AudioSource>(); // 🎵 Thêm AudioSource vào object
+        audioSource.playOnAwake = false; // Không phát khi game bắt đầu
     }
 
     void Update()
@@ -37,7 +41,6 @@ public abstract class ShooterAbstract : MonoBehaviour
             return;
         }
 
-        // 🔥 Chỉ bắn nếu còn enemy trong danh sách
         if (fireCooldown <= 0f && enemiesInRange.Count > 0)
         {
             currentTarget = enemiesInRange[0]; // Chọn mục tiêu
@@ -53,19 +56,13 @@ public abstract class ShooterAbstract : MonoBehaviour
     public void SetPlaced(bool placed)
     {
         isPlaced = placed;
-
-        if (animator == null)
-        {
-            Debug.LogError("Animator is NULL in ShooterAbstract!", this);
-            return;
-        }
-
-        animator.enabled = placed;  // ❌ Dừng khi chưa đặt, ✅ Bật lại khi đặt xong
+        animator.enabled = placed;
     }
 
     public void ShootEnemy2()
     {
         if (currentTarget == null) return;
+
         animator.SetTrigger("Shoot"); // Kích hoạt animation bắn
         ShootEnemy(currentTarget); // Gọi lại hàm gốc với mục tiêu hiện tại
     }
@@ -73,6 +70,7 @@ public abstract class ShooterAbstract : MonoBehaviour
     void ShootEnemy(EnemyAbstract target)
     {
         if (target == null) return;
+
         animator.SetBool("IsFire", true);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         BulletAbstract bulletScript = bullet.GetComponent<BulletAbstract>();
@@ -81,6 +79,12 @@ public abstract class ShooterAbstract : MonoBehaviour
         // 🌟 Lấy góc quay của viên đạn và gán cho tower
         float bulletAngle = bullet.transform.rotation.eulerAngles.z;
         transform.rotation = Quaternion.Euler(0, 0, bulletAngle);
+
+        // 🔊 Phát âm thanh khi bắn
+        if (shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
     }
 
     public abstract float ChangeDamageBaseOnLevel();

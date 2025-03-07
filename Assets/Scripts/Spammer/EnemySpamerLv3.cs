@@ -1,30 +1,35 @@
 ﻿using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpamerLv3 : MonoBehaviour
 {
-    public GameObject kingBerserker; // Prefab quái
+    public GameObject kingBerserker;
     public Transform[] waypoints;
+    public TMP_Text waveText, enemyKillText;
 
-    private float spawnRate = 1.5f; // Thời gian giữa mỗi lần spawn
-    private int maxEnemies = 10; // Số quái mỗi wave
-    private int currentEnemies = 0; // Đếm số quái hiện tại
-    private int maxWaves = 15; // Tổng số wave
-    private int currentWave = 0; // Đếm wave hiện tại
+    private float spawnRate = 1.5f;
+    private int maxEnemies = 10;
+    private int currentEnemies = 0;
+    private int maxWaves = 15;
+    private int currentWave = 0;
+    private static int enemiesKilled = 0;
 
     void Start()
     {
+        UpdateUI();
         StartCoroutine(SpawnWaves());
     }
 
     private IEnumerator SpawnWaves()
     {
-        while (currentWave < maxWaves) // Lặp 15 wave
+        while (currentWave < maxWaves)
         {
             currentWave++;
-            currentEnemies = 0; // Reset số quái
+            currentEnemies = 0;
+            UpdateUI();
 
-            while (currentEnemies < maxEnemies) // Sinh quái trong wave hiện tại
+            while (currentEnemies < maxEnemies)
             {
                 yield return new WaitForSeconds(spawnRate);
                 GameObject newKing = Instantiate(kingBerserker, transform.position, Quaternion.identity);
@@ -33,9 +38,37 @@ public class EnemySpamerLv3 : MonoBehaviour
             }
 
             Debug.Log($"Wave {currentWave} đã kết thúc! Đợi 5 giây...");
-            yield return new WaitForSeconds(1f); // Chờ 30s trước khi bắt đầu wave mới
+            yield return new WaitForSeconds(1f);
         }
 
         Debug.Log("Tất cả 15 wave đã hoàn thành!");
+    }
+
+    public static void EnemyDefeated()
+    {
+        enemiesKilled++;
+        FindObjectOfType<EnemySpamerLv3>().UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        if (waveText != null)
+            waveText.text = $"Wave: {currentWave}/{maxWaves}";
+
+        if (enemyKillText != null)
+            enemyKillText.text = $"Quái tiêu diệt: {enemiesKilled}";
+    }
+
+    // 🎯 Hàm này sẽ được gọi khi nhấn "New Game"
+    public void ResetGame()
+    {
+        StopAllCoroutines(); // Dừng tất cả coroutines đang chạy
+        currentWave = 0;
+        enemiesKilled = 0;
+        currentEnemies = 0;
+
+        UpdateUI(); // Cập nhật lại UI
+
+        StartCoroutine(SpawnWaves()); // Bắt đầu lại vòng lặp quái
     }
 }
