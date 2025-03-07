@@ -64,7 +64,7 @@ public class GoldManage : MonoBehaviour
     private void UpdateGoldDisplay()
     {
         goldText.text = "Gold: " + gold;
-        UpdateGoldTowerDisplay(10, 20, 50);
+        UpdateGoldTowerDisplay(20, 30, 50);
     }
     private void UpdateGoldTowerDisplay(int t1, int t2, int t3)
     {

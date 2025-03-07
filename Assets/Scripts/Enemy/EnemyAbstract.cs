@@ -16,10 +16,13 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     void Start()
     {
-        transform.position = waypoints[0].position; // Đặt Goblin ở waypoint đầu tiên
+        transform.position = waypoints[0].position;
         animator = GetComponent<Animator>();
         animator.SetBool("gameStart", true);
         animator.SetBool("isDead", false);
+
+        speed *= EnemyManager.currentSpeedMultiplier; // 🔥 Gán tốc độ ngay khi spawn
+
         if (healthBar != null)
         {
             healthBar.maxValue = health;
@@ -110,11 +113,13 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     void Die()
     {
+        EnemySpamerLv3.EnemyDefeated(); // 🔥 Gọi hàm khi quái chết
         animator.SetBool("isDead", true);
         speed = 0; // Ngăn di chuyển khi chết
         StartCoroutine(WaitForDeathAnimation());
         GoldManage.Instance.AddGold(goldDrop);
     }
+
 
     IEnumerator WaitForDeathAnimation()
     {
@@ -136,5 +141,10 @@ public abstract class EnemyAbstract : MonoBehaviour
         yield return new WaitForSeconds(duration); // Đợi trong một khoảng thời gian
 
         speed = originalSpeed; // Khôi phục tốc độ ban đầu
+    }
+
+    public void SetSpeedMultiplier(float multiplier)
+    {
+        speed = 2.0f * multiplier; // 2.0f là tốc độ mặc định, nhân với multiplier
     }
 }
