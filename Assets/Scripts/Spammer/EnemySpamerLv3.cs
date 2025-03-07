@@ -53,10 +53,10 @@ public class EnemySpamerLv3 : MonoBehaviour
     void UpdateUI()
     {
         if (waveText != null)
-            waveText.text = $"Wave: {currentWave}/{maxWaves}";
+            waveText.text = $"{currentWave}/{maxWaves}";
 
         if (enemyKillText != null)
-            enemyKillText.text = $"Quái tiêu diệt: {enemiesKilled}";
+            enemyKillText.text = $"{enemiesKilled}";
     }
 
     // 🎯 Hàm này sẽ được gọi khi nhấn "New Game"

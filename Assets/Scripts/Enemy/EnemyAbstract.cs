@@ -7,11 +7,12 @@ public abstract class EnemyAbstract : MonoBehaviour
 {
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
-    public float speed = 2.0f; // default
+    protected float speed = 2.0f; // default
     private float minDistance = 0.1f; // default
     private Animator animator;
-    public float health = 50f; // default
+    protected float health = 50f; // default
     public Slider healthBar;
+    protected int goldDrop = 3; // default
 
     void Start()
     {
@@ -116,6 +117,7 @@ public abstract class EnemyAbstract : MonoBehaviour
         animator.SetBool("isDead", true);
         speed = 0; // Ngăn di chuyển khi chết
         StartCoroutine(WaitForDeathAnimation());
+        GoldManage.Instance.AddGold(goldDrop);
     }
 
 
