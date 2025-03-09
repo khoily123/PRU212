@@ -55,7 +55,7 @@ public class MenuManager : MonoBehaviour
     void StartNewGame()
     {
         Time.timeScale = 1f; // Reset tốc độ game
-        FindObjectOfType<EnemySpamerLv3>()?.ResetGame();
+        FindObjectOfType<SpammerAbstract>()?.ResetGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
