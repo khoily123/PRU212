@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - HighlightTilemap
   - BackgroundMusic
+  - Tree
+  - Stone
   layers:
   - Default
   - TransparentFX
