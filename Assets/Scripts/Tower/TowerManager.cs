@@ -17,7 +17,20 @@ public class TowerManager : MonoBehaviour
     private GameObject towerPreview; // Hiển thị trước khi đặt
     public int[] towerCosts; //giá của các tháp
     public bool isPopupActive = false;
-
+    public static TowerManager Instance { get; private set; } // Singleton instance
+    private void Awake()
+    {
+        // Đảm bảo chỉ có một instance của GoldManager
+        if (Instance == null)
+        {
+            Instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         towerSelectionPopup.SetActive(isPopupActive); // Ẩn popup khi game bắt đầu
