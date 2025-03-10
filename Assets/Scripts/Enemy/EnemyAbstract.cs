@@ -10,7 +10,7 @@ public abstract class EnemyAbstract : MonoBehaviour
     protected float speed = 2.0f; // default
     private float minDistance = 0.1f; // default
     private Animator animator;
-    protected float health = 50f; // default
+    protected float health = 20f; // default
     public Slider healthBar;
     protected int goldDrop = 3; // default
 
