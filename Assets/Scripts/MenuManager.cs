@@ -78,7 +78,7 @@ public class MenuManager : MonoBehaviour
 
     void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("LevelSelection");
     }
 
     // 🔊 Tăng âm lượng

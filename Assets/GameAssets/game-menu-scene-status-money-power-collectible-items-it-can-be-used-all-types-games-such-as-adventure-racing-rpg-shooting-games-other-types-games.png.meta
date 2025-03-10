@@ -1,0 +1,551 @@
+fileFormatVersion: 2
+guid: 70ba839fe6d94fa4fb1bf8013b3dce16
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 446
+        width: 713
+        height: 1354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f44ecf7c12a8a4e8d822b28824c4fe
+      internalID: -1836389523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_1
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1126
+        width: 706
+        height: 674
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a45c71b5daafc47ba88703f7f5c2a0
+      internalID: 1335142422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_2
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 1630
+        width: 168
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a55a33855f793a4da5e5449aa375d7b
+      internalID: 640173578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_3
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 1382
+        width: 164
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d7a2a04b283c5478d7649b1a72b080
+      internalID: 7208422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_4
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 1139
+        width: 153
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f6dffd67a088c4583c5bd95c8c72de
+      internalID: 210441426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_5
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 735
+        width: 650
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103aff1853b4ff542ad45e0cb5a2dc78
+      internalID: 1509511913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_6
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 926
+        width: 131
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adfdc4cb4f402d46a40febf979afaa6
+      internalID: -903283380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_7
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 926
+        width: 135
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40f26d4729ca8d4092883dabb78f7b6
+      internalID: -657769067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_8
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 517
+        width: 303
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5bb27bd5643f49489dd4b50099d9584
+      internalID: 1421560665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_9
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 368
+        width: 306
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c307089391e382140904e2730eb25ef3
+      internalID: 1219143533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_10
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 514
+        width: 301
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efca3c402ae7cc4aba717945441ea48
+      internalID: -2124607246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_11
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 368
+        width: 304
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9afc3a4a62f3349b8f76c5318f7433
+      internalID: -622095277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_12
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 367
+        width: 301
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba359dea8fc45e244a5196aa041aec7d
+      internalID: -714658749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_13
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 100
+        width: 177
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92182cea34d240c41888772e6b44fbc5
+      internalID: 816465893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_14
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 100
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d75225403a2b74f8a96288d67f7c54
+      internalID: 932862511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_15
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 100
+        width: 176
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6dd3a591eb1a6b4f9e2acfe968ed9b7
+      internalID: 1699999085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_16
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 100
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f3f2e34ad57c34ab11d97eb16f9696
+      internalID: -560850687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_17
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 100
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b2156d1b1e7ec47a13f815a1e192d8
+      internalID: -62427546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_18
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 100
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3721951ab01a448b739dcae0bb3d23
+      internalID: -1185296115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_19
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 100
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eead734921649944e9f662f21e7fd106
+      internalID: -1147717565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_0: -1836389523
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_1: 1335142422
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_10: -2124607246
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_11: -622095277
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_12: -714658749
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_13: 816465893
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_14: 932862511
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_15: 1699999085
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_16: -560850687
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_17: -62427546
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_18: -1185296115
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_19: -1147717565
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_2: 640173578
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_3: 7208422
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_4: 210441426
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_5: 1509511913
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_6: -903283380
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_7: -657769067
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_8: 1421560665
+      game-menu-scene-status-money-power-collectible-items-it-can-be-used-all-types-games-such-as-adventure-racing-rpg-shooting-games-other-types-games_9: 1219143533
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
