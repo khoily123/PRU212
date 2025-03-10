@@ -19549,6 +19549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eac09ff30022974c81c839969eafcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 10
 --- !u!114 &1916023463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19561,6 +19562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86953215b82919b409f38e81ea825253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 10
 --- !u!114 &1916023464
 MonoBehaviour:
   m_ObjectHideFlags: 0
