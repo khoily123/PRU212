@@ -19317,7 +19317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7938682449071153087, guid: f53588636fa82074fbc932f9d85aa635, type: 3}
+  m_Sprite: {fileID: 4284494091197505927, guid: ea4a9697471e62546a661542d4442e8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19473,7 +19473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPrefabs:
   - {fileID: 7423077843372897042, guid: 957ef2efc8127ea44a76c1017f0cb79b, type: 3}
-  - {fileID: 6211282614664106142, guid: 2836f92b76c205f48b415fac290f973b, type: 3}
+  - {fileID: 7170190186236839791, guid: b6d705900c4c4c947bb57c17ae4a22e3, type: 3}
   - {fileID: 8362318004551401701, guid: 1083401df37d41643bf772067780792d, type: 3}
   gridTilemap: {fileID: 975816302}
   highlightTilemap: {fileID: 233566283}
@@ -19481,7 +19481,7 @@ MonoBehaviour:
   highlightRed: {fileID: 11400000, guid: 6a53512748fe89e4fb88fde5bea71676, type: 2}
   towerSelectionPopup: {fileID: 1124637376}
   roadTilemap: {fileID: 277593881}
-  towerCosts: 140000001e00000032000000
+  towerCosts: 0a0000000f00000032000000
   isPopupActive: 0
 --- !u!114 &1916023458
 MonoBehaviour:
