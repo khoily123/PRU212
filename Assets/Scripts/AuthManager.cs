@@ -109,13 +109,31 @@ public class AuthManager : MonoBehaviour
                 try
                 {
                     object result = cmd.ExecuteScalar();
-                    return (result != null) ? Convert.ToInt32(result) : -1;
+                    if (result != null)
+                    {
+                        int playerId = Convert.ToInt32(result);
+                        InsertDefaultScore(conn, playerId);
+                        return playerId;
+                    }
                 }
                 catch (SqlException)
                 {
-                    return -1; // Trường hợp username đã tồn tại
+                    return -1; // Username đã tồn tại
                 }
             }
+        }
+        return -1;
+    }
+
+    private void InsertDefaultScore(SqlConnection conn, int playerId)
+    {
+        string query = "INSERT INTO PlayerScores (PlayerId, Score, CreatedAt) VALUES (@PlayerId, @Score, @CreatedAt)";
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@PlayerId", playerId);
+            cmd.Parameters.AddWithValue("@Score", 0);
+            cmd.Parameters.AddWithValue("@CreatedAt", DateTime.UtcNow);
+            cmd.ExecuteNonQuery();
         }
     }
 

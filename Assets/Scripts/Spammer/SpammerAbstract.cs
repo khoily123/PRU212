@@ -52,7 +52,7 @@ public abstract class SpammerAbstract : MonoBehaviour
         
     }
 
-    private IEnumerator SpawnWaves()
+    protected virtual IEnumerator SpawnWaves()
     {
         while (currentWave < maxWaves)
         {

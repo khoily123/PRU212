@@ -21,7 +21,7 @@ public abstract class EnemyAbstract : MonoBehaviour
         animator.SetBool("gameStart", true);
         animator.SetBool("isDead", false);
 
-        speed *= EnemyManager.currentSpeedMultiplier; // 🔥 Gán tốc độ ngay khi spawn
+        speed *= EnemyManager.currentSpeedMultiplier;
 
         if (healthBar != null)
         {
@@ -38,24 +38,22 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     void Move()
     {
+        if (waypoints == null || waypoints.Length == 0) return;
+
         Transform targetWaypoint = waypoints[currentWaypointIndex];
         Vector3 movementDirection = (targetWaypoint.position - transform.position).normalized;
         float movementStep = speed * Time.deltaTime;
         float distance = Vector3.Distance(transform.position, targetWaypoint.position);
 
-        // Di chuyển đến waypoint hiện tại
         transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
-
-        // Cập nhật trạng thái animation dựa trên hướng di chuyển
         UpdateAnimation(movementDirection);
 
-        // Kiểm tra xem đã đến waypoint chưa
         if (distance <= minDistance)
         {
             currentWaypointIndex++;
             if (currentWaypointIndex >= waypoints.Length)
             {
-                Destroy(gameObject);  // Bắt đầu lại từ waypoint đầu tiên
+                Destroy(gameObject);
             }
         }
     }
@@ -145,5 +143,11 @@ public abstract class EnemyAbstract : MonoBehaviour
     public void SetSpeedMultiplier(float multiplier)
     {
         speed = 2.0f * multiplier; // 2.0f là tốc độ mặc định, nhân với multiplier
+    }
+
+    public void SetWaypoints(Transform[] newWaypoints)
+    {
+        waypoints = newWaypoints;
+        transform.position = waypoints[0].position;
     }
 }
