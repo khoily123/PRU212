@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7610490270624796814}
   - component: {fileID: 5544211076979416062}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower 01-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4091221273554889048}
   - component: {fileID: 3517442183815329033}
   - component: {fileID: 2522093799844262819}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: ButtonUpdate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 5290870852495363140}
   - component: {fileID: 2050915937173069858}
   - component: {fileID: 1565388650829449264}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: ButtonRemove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 2227771309129289527}
   - component: {fileID: 4370091237830234651}
   - component: {fileID: 7574171590706029798}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower 01 - Level 01 - Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 1266326808022471843}
   - component: {fileID: 4921448453194353007}
   - component: {fileID: 1707981388369242271}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -564325785
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &4921448453194353007
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 8648414262551705319}
   - component: {fileID: 8326647616969432618}
   - component: {fileID: 5514355019521510924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower1-Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,8 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTower: {fileID: 7423077843372897042}
-  towerLv2: {fileID: 6211282614664106142, guid: 2836f92b76c205f48b415fac290f973b, type: 3}
-  cost: 50
+  upgradedTower: {fileID: 6211282614664106142, guid: 2836f92b76c205f48b415fac290f973b, type: 3}
 --- !u!114 &5514355019521510924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,6 +700,38 @@ PrefabInstance:
     - target: {fileID: 4825496405823077035, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
       propertyPath: m_Name
       value: Dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496405823077035, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496405962909943, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496406342649221, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496406744931643, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496407121770576, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496407123389148, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496407264418330, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496407422175878, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
