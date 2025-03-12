@@ -69,3 +69,6 @@ TagManager:
   - name: TowerUI
     uniqueID: 3730641511
     locked: 0
+  - name: PanelUI
+    uniqueID: 2488472505
+    locked: 0

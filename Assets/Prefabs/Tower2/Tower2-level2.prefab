@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 8975299929177891287}
   - component: {fileID: 4907022826255070354}
   - component: {fileID: 9022724614927158799}
+  - component: {fileID: -7440868376827439162}
   m_Layer: 7
   m_Name: Tower2-level2
   m_TagString: Untagged
@@ -418,6 +419,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTower: {fileID: 4006528239492277657}
   upgradedTower: {fileID: 6810155175723736222, guid: 1c3cf024b7ae2f043997207260afd7cc, type: 3}
+--- !u!61 &-7440868376827439162
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006528239492277657}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001}
+  m_EdgeRadius: 0
 --- !u!1 &7164475025449585987
 GameObject:
   m_ObjectHideFlags: 0

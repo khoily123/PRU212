@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 3038980982309669396}
   - component: {fileID: 1824479291525440023}
   - component: {fileID: 8823606959915458644}
+  - component: {fileID: 5512685430582653256}
   m_Layer: 7
   m_Name: Tower3-level2
   m_TagString: Untagged
@@ -267,9 +268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 4825496405823077035, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
-  yesButton: {fileID: 3834586085983263344, guid: 957ef2efc8127ea44a76c1017f0cb79b, type: 3}
-  noButton: {fileID: 3834586086662618903, guid: 957ef2efc8127ea44a76c1017f0cb79b, type: 3}
-  dialogText: {fileID: 3834586086672690587, guid: 957ef2efc8127ea44a76c1017f0cb79b, type: 3}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
+  dialogText: {fileID: 0}
   towerGameObject: {fileID: 4248658453097038153}
 --- !u!114 &8823606959915458644
 MonoBehaviour:
@@ -285,6 +286,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTower: {fileID: 4248658453097038153}
   upgradedTower: {fileID: 6464870927885763489, guid: ebcee926f9e81c64b8e2dc4f6102de91, type: 3}
+--- !u!61 &5512685430582653256
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4248658453097038153}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001}
+  m_EdgeRadius: 0
 --- !u!1 &5120081759453457178
 GameObject:
   m_ObjectHideFlags: 0
