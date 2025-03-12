@@ -8,6 +8,6 @@ public class EnemySpamerLv3 : SpammerAbstract
     {
         spawnRate = 1.5f;
         maxEnemies = 10;
-        maxWaves = 15;
+        maxWaves = 5;
     }
 }

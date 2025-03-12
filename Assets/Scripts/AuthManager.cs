@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;  // Import thư viện UI
+using UnityEngine.UI;
 using System.Data.SqlClient;
 using System;
 using System.Security.Cryptography;
@@ -14,12 +14,11 @@ public class AuthManager : MonoBehaviour
     public TMPro.TMP_InputField passwordInput;
     public TMPro.TMP_Text messageText;
 
-    public Button loginButton;  // 🔥 Thêm biến Button
+    public Button loginButton;
     public Button registerButton;
 
     void Start()
     {
-        // 🔥 Gán sự kiện Click cho Button
         loginButton.onClick.AddListener(Login);
         registerButton.onClick.AddListener(Register);
     }
@@ -29,14 +28,16 @@ public class AuthManager : MonoBehaviour
         string username = usernameInput.text.Trim();
         string password = HashPassword(passwordInput.text.Trim());
 
-        if (AuthenticateUser(username, password))
+        int playerId = AuthenticateUser(username, password);
+        if (playerId > 0)
         {
-            int maxLevel = GetMaxLevel(username); // Lấy Level cao nhất mà user chơi đến
+            int maxLevel = GetMaxLevel(playerId);
+            PlayerPrefs.SetInt("PlayerId", playerId);
             PlayerPrefs.SetString("LoggedInUser", username);
-            PlayerPrefs.SetInt("MaxLevel", maxLevel); // Lưu vào bộ nhớ tạm
+            PlayerPrefs.SetInt("MaxLevel", maxLevel);
 
             messageText.text = "Đăng nhập thành công!";
-            SceneManager.LoadScene("LevelSelection"); // Chuyển đến màn chọn level
+            SceneManager.LoadScene("LevelSelection");
         }
         else
         {
@@ -44,16 +45,15 @@ public class AuthManager : MonoBehaviour
         }
     }
 
-
-    private int GetMaxLevel(string username)
+    private int GetMaxLevel(int playerId)
     {
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
             conn.Open();
-            string query = "SELECT MaxLevel FROM Players WHERE Username = @Username";
+            string query = "SELECT MaxLevel FROM Players WHERE Id = @PlayerId";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@PlayerId", playerId);
                 object result = cmd.ExecuteScalar();
                 return (result != null) ? Convert.ToInt32(result) : 1;
             }
@@ -65,10 +65,14 @@ public class AuthManager : MonoBehaviour
         string username = usernameInput.text.Trim();
         string password = HashPassword(passwordInput.text.Trim());
 
-        if (RegisterUser(username, password))
+        int playerId = RegisterUser(username, password);
+        if (playerId > 0)
         {
+            PlayerPrefs.SetInt("PlayerId", playerId);
+            PlayerPrefs.SetString("LoggedInUser", username);
+            PlayerPrefs.SetInt("MaxLevel", 1);
             messageText.text = "Đăng ký thành công! Đang chuyển đến game...";
-            SceneManager.LoadScene("LevelSelection"); // Load màn game sau khi đăng ký
+            SceneManager.LoadScene("LevelSelection");
         }
         else
         {
@@ -76,40 +80,40 @@ public class AuthManager : MonoBehaviour
         }
     }
 
-    private bool AuthenticateUser(string username, string password)
+    private int AuthenticateUser(string username, string password)
     {
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
             conn.Open();
-            string query = "SELECT COUNT(*) FROM Players WHERE Username = @Username AND PasswordHash = @Password";
+            string query = "SELECT Id FROM Players WHERE Username = @Username AND PasswordHash = @Password";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@Password", password);
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;
+                object result = cmd.ExecuteScalar();
+                return (result != null) ? Convert.ToInt32(result) : -1;
             }
         }
     }
 
-    private bool RegisterUser(string username, string password)
+    private int RegisterUser(string username, string password)
     {
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
             conn.Open();
-            string query = "INSERT INTO Players (Username, PasswordHash) VALUES (@Username, @Password)";
+            string query = "INSERT INTO Players (Username, PasswordHash) OUTPUT INSERTED.Id VALUES (@Username, @Password)";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@Password", password);
                 try
                 {
-                    cmd.ExecuteNonQuery();
-                    return true;
+                    object result = cmd.ExecuteScalar();
+                    return (result != null) ? Convert.ToInt32(result) : -1;
                 }
                 catch (SqlException)
                 {
-                    return false; // Trường hợp username đã tồn tại
+                    return -1; // Trường hợp username đã tồn tại
                 }
             }
         }
