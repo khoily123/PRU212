@@ -13,7 +13,7 @@ public abstract class EnemyAbstract : MonoBehaviour
     protected float health = 50f; // default
     public Slider healthBar;
     protected int goldDrop = 3; // default
-
+    protected int attackDamage = 2; // default
     void Start()
     {
         transform.position = waypoints[0].position;
@@ -52,10 +52,14 @@ public abstract class EnemyAbstract : MonoBehaviour
         // Kiểm tra xem đã đến waypoint chưa
         if (distance <= minDistance)
         {
-            currentWaypointIndex++;
-            if (currentWaypointIndex >= waypoints.Length)
+            if (currentWaypointIndex < waypoints.Length - 1)
             {
-                Destroy(gameObject);  // Bắt đầu lại từ waypoint đầu tiên
+                currentWaypointIndex++;
+            }
+            else
+            {
+                // Đã đến waypoint cuối cùng, tấn công nhà chính
+                AttackMainHouse();
             }
         }
     }
@@ -145,5 +149,21 @@ public abstract class EnemyAbstract : MonoBehaviour
     public void SetSpeedMultiplier(float multiplier)
     {
         speed = 2.0f * multiplier; // 2.0f là tốc độ mặc định, nhân với multiplier
+    }
+
+    void AttackMainHouse()
+    {
+        // Ngăn không cho quái di chuyển sau khi tấn công
+        speed = 0;
+        animator.SetBool("isAttacking", true); // Giả sử có trạng thái tấn công trong Animator
+    }
+
+    void PerformAttack()
+    {
+        HomeScript mainHouse = FindObjectOfType<HomeScript>(); // Tìm nhà chính trong Scene
+        if (mainHouse != null)
+        {
+            mainHouse.TakeDamage(attackDamage); // Gây sát thương
+        }
     }
 }

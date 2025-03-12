@@ -5,15 +5,35 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BulletTower05_level1 : BulletAbstract
 {
-    public float slowAmount = 0; // Mức độ làm chậm
-    public float slowDuration = 2f; // Thời gian làm chậm
+    public BulletTower05_level1()
+    {
+        speed = 5f;  // Giá trị mới cho tốc độ
+    }
+    private float pushBackForce = 1.0f;  // Lực đẩy lùi có thể điều chỉnh
+
     protected override void Explode()
     {
-        base.Explode(); // Gọi phương thức cơ sở để xử lý hiệu ứng nổ
+        base.Explode();  // Gọi phương thức cơ sở để xử lý việc tạo hiệu ứng nổ
 
+        // Thực hiện đẩy lùi mục tiêu
         if (target != null)
         {
-            target.ReduceSpeed(slowAmount, slowDuration); // Áp dụng hiệu ứng làm chậm
+            PushBack(target.transform.position - transform.position);
+        }
+    }
+
+    private void PushBack(Vector3 direction)
+    {
+        Rigidbody targetRigidbody = target.GetComponent<Rigidbody>();
+        if (targetRigidbody != null)
+        {
+            // Áp dụng lực đẩy lùi với Rigidbody
+            targetRigidbody.AddForce(direction.normalized * pushBackForce, ForceMode.Impulse);
+        }
+        else
+        {
+            // Đẩy lùi mục tiêu bằng cách thay đổi trực tiếp vị trí nếu không có Rigidbody
+            target.transform.position += direction.normalized * pushBackForce;
         }
     }
 
