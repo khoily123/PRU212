@@ -63,12 +63,13 @@ public class TowerManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && CanPlaceTower(cellPosition))
             {
-
                 if (GoldManage.Instance.CanAfford(towerCosts[Array.IndexOf(towerPrefabs, selectedTower)]))
                 {
                     GoldManage.Instance.SpendGold(towerCosts[Array.IndexOf(towerPrefabs, selectedTower)]);
                     GameObject towerInstance = Instantiate(selectedTower, snapPosition, Quaternion.identity);
                     ShooterAbstract shooter = towerInstance.GetComponentInChildren<ShooterAbstract>();
+                    Debug.Log(towerInstance);
+                    Debug.Log(shooter);
                     // 🔥 Tìm Shooter trong các con của towerInstance
 
                     if (shooter != null)
