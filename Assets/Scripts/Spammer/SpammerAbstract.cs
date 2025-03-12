@@ -11,7 +11,7 @@ public abstract class SpammerAbstract : MonoBehaviour
     private string connectionString = "Server=(local);Database=DefenseTower;User Id=sa;Password=123;Encrypt=false;Trusted_Connection=True";
 
     public TMP_Text waveText, enemyKillText;
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public Transform[] waypoints;
 
     protected float spawnRate;
@@ -54,6 +54,8 @@ public abstract class SpammerAbstract : MonoBehaviour
 
     protected virtual IEnumerator SpawnWaves()
     {
+        int enemyTypeIndex = 0; // 🔥 Bắt đầu từ enemy đầu tiên trong danh sách
+
         while (currentWave < maxWaves)
         {
             currentWave++;
@@ -63,9 +65,21 @@ public abstract class SpammerAbstract : MonoBehaviour
             while (currentEnemies < maxEnemies)
             {
                 yield return new WaitForSeconds(spawnRate);
-                GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
+                // 🎯 Chọn loại enemy theo turn (mỗi 10 quái là 1 loại enemy)
+                GameObject selectedEnemyPrefab = enemyPrefabs[enemyTypeIndex];
+
+                // 🔥 Spawn enemy
+                GameObject newEnemy = Instantiate(selectedEnemyPrefab, transform.position, Quaternion.identity);
                 newEnemy.GetComponent<EnemyAbstract>().waypoints = waypoints;
+
                 currentEnemies++;
+
+                // 🔄 Sau mỗi 10 quái, đổi sang loại enemy tiếp theo (xoay vòng)
+                if (currentEnemies % 10 == 0)
+                {
+                    enemyTypeIndex = (enemyTypeIndex + 1) % enemyPrefabs.Length;
+                }
             }
 
             Debug.Log($"Wave {currentWave} đã kết thúc! Đợi...");
