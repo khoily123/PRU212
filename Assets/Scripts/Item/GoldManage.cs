@@ -11,6 +11,7 @@ public class GoldManage : MonoBehaviour
     public TextMeshProUGUI goldT1;
     public TextMeshProUGUI goldT2;
     public TextMeshProUGUI goldT3;
+    public TextMeshProUGUI goldT4;
     private int gold = 50; // Số vàng ban đầu
 
     private void Awake()
@@ -64,12 +65,16 @@ public class GoldManage : MonoBehaviour
     private void UpdateGoldDisplay()
     {
         goldText.text = "Gold: " + gold;
-        UpdateGoldTowerDisplay(20, 30, 50);
+        UpdateGoldTowerDisplay(TowerManager.Instance.towerCosts[0],
+            TowerManager.Instance.towerCosts[1],
+            TowerManager.Instance.towerCosts[2],
+            TowerManager.Instance.towerCosts[3]);
     }
-    private void UpdateGoldTowerDisplay(int t1, int t2, int t3)
+    private void UpdateGoldTowerDisplay(int t1, int t2, int t3, int t4)
     {
         goldT1.text = "" + t1;
         goldT2.text = "" + t2;
         goldT3.text = "" + t3;
+        goldT4.text = "" + t4;
     }
 }

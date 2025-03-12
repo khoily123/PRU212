@@ -19,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Text
-  - 
+  - Tower
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: HighlightTilemap
     uniqueID: 401020427
+    locked: 0
+  - name: TowerUI
+    uniqueID: 3730641511
     locked: 0

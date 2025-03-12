@@ -18,7 +18,20 @@ public class TowerManager : MonoBehaviour
     private GameObject towerPreview;
     public int[] towerCosts;
     public bool isPopupActive = false;
-
+    public static TowerManager Instance { get; private set; } // Singleton instance
+    private void Awake()
+    {
+        // Đảm bảo chỉ có một instance của GoldManager
+        if (Instance == null)
+        {
+            Instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         towerSelectionPopup.SetActive(isPopupActive);
@@ -68,6 +81,10 @@ public class TowerManager : MonoBehaviour
                     GoldManage.Instance.SpendGold(towerCosts[towerIndex]);
                     GameObject towerInstance = Instantiate(selectedTower, snapPosition, Quaternion.identity);
                     ShooterAbstract shooter = towerInstance.GetComponentInChildren<ShooterAbstract>();
+                    Debug.Log(towerInstance);
+                    Debug.Log(shooter);
+                    // 🔥 Tìm Shooter trong các con của towerInstance
+
                     if (shooter != null)
                     {
                         shooter.SetPlaced(true);
