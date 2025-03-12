@@ -20039,7 +20039,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveText: {fileID: 1826577440}
   enemyKillText: {fileID: 154947487}
-  enemyPrefab: {fileID: 1924377750749864510, guid: 36148e28991fd5341848ae6886b6ae39, type: 3}
+  enemyPrefabs:
+  - {fileID: 7425220516405459035, guid: 60f23fc0e334206449195dbdd0e20ecf, type: 3}
+  - {fileID: 1223002065101815944, guid: a4afc902e34e1724781cced45b208b91, type: 3}
+  - {fileID: 1924377750749864510, guid: 36148e28991fd5341848ae6886b6ae39, type: 3}
+  - {fileID: 5845715124070300292, guid: 7f5ea1ef61592854b9267cc8fa2d3197, type: 3}
   waypoints:
   - {fileID: 193534176}
   - {fileID: 1568310177}

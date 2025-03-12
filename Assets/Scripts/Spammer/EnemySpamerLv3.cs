@@ -6,6 +6,7 @@ public class EnemySpamerLv3 : SpammerAbstract
 {
     public Transform[] alternativeWaypoints; // Đường đi thứ 2
     private bool useAlternativePath = false; // Bật tắt đường đi
+    private int enemyTypeIndex = 0; // Chỉ số loại enemy hiện tại
 
     void Awake()
     {
@@ -27,16 +28,27 @@ public class EnemySpamerLv3 : SpammerAbstract
             while (currentEnemies < maxEnemies)
             {
                 yield return new WaitForSeconds(spawnRate);
-                GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 
-                // Chọn hướng đi theo trạng thái useAlternativePath
+                // 🔥 Chọn loại enemy dựa trên enemyTypeIndex
+                GameObject selectedEnemyPrefab = enemyPrefabs[enemyTypeIndex];
+
+                // 🔥 Spawn enemy
+                GameObject newEnemy = Instantiate(selectedEnemyPrefab, transform.position, Quaternion.identity);
+
+                // 🔥 Chọn đường đi theo trạng thái useAlternativePath
                 Transform[] selectedWaypoints = useAlternativePath ? alternativeWaypoints : waypoints;
                 newEnemy.GetComponent<EnemyAbstract>().SetWaypoints(selectedWaypoints);
 
                 currentEnemies++;
+
+                // 🎯 Sau mỗi 10 quái, đổi loại enemy (xoay vòng)
+                if (currentEnemies % 10 == 0)
+                {
+                    enemyTypeIndex = (enemyTypeIndex + 1) % enemyPrefabs.Length;
+                }
             }
 
-            // Sau mỗi wave, đổi hướng đi
+            // 🔄 Sau mỗi wave, đổi hướng đi
             useAlternativePath = !useAlternativePath;
 
             yield return new WaitForSeconds(1f);
