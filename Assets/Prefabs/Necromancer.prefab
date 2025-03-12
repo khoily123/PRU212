@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: -7637569089853544872}
   - component: {fileID: -5446046253879628711}
   - component: {fileID: 6640140128183175558}
+  - component: {fileID: 5689127832686025243}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Enemy
@@ -440,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 5347495229450194948}
 --- !u!70 &-5446046253879628711
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -478,6 +479,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &5689127832686025243
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5845715124070300292}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6080976085951692641
 GameObject:
   m_ObjectHideFlags: 0
