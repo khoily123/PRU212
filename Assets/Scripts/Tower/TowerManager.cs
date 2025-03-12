@@ -6,16 +6,17 @@ using UnityEngine.UI;
 
 public class TowerManager : MonoBehaviour
 {
-    public GameObject[] towerPrefabs; // Mảng chứa prefab Tower
-    public Tilemap gridTilemap; // Tilemap của map
-    public Tilemap highlightTilemap; // Tilemap hiển thị vùng đặt (màu xanh/đỏ)
-    public Tile highlightGreen; // Tile highlight xanh (được đặt)
-    public Tile highlightRed; // Tile highlight đỏ (không được đặt)
-    public GameObject towerSelectionPopup; // Popup UI chọn Tower
+    public GameObject[] towerPrefabs;
+    public Tilemap gridTilemap;
+    public Tilemap highlightTilemap;
+    public Tile highlightGreen;
+    public Tile highlightRed;
+    public GameObject towerSelectionPopup;
     public Tilemap roadTilemap;
-    private GameObject selectedTower; // Tower đang chọn
-    private GameObject towerPreview; // Hiển thị trước khi đặt
-    public int[] towerCosts; //giá của các tháp
+
+    private GameObject selectedTower;
+    private GameObject towerPreview;
+    public int[] towerCosts;
     public bool isPopupActive = false;
     public static TowerManager Instance { get; private set; } // Singleton instance
     private void Awake()
@@ -33,7 +34,7 @@ public class TowerManager : MonoBehaviour
     }
     void Start()
     {
-        towerSelectionPopup.SetActive(isPopupActive); // Ẩn popup khi game bắt đầu
+        towerSelectionPopup.SetActive(isPopupActive);
     }
 
     void Update()
@@ -43,20 +44,18 @@ public class TowerManager : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
 
-            // Lấy vị trí ô tilemap
             Vector3Int cellPosition = gridTilemap.WorldToCell(mousePos);
             Vector3 snapPosition = gridTilemap.GetCellCenterWorld(cellPosition);
 
-            // Xóa highlight cũ
             highlightTilemap.ClearAllTiles();
 
             if (CanPlaceTower(cellPosition))
             {
-                highlightTilemap.SetTile(cellPosition, highlightGreen); // Hiển thị ô xanh
+                highlightTilemap.SetTile(cellPosition, highlightGreen);
             }
             else
             {
-                highlightTilemap.SetTile(cellPosition, highlightRed); // Hiển thị ô đỏ
+                highlightTilemap.SetTile(cellPosition, highlightRed);
             }
 
             if (towerPreview == null)
@@ -67,7 +66,7 @@ public class TowerManager : MonoBehaviour
                 {
                     previewShooter.SetPlaced(false);
                 }
-                SetTowerAlpha(towerPreview, 0.5f); // Đặt alpha thấp để làm preview
+                SetTowerAlpha(towerPreview, 0.5f);
             }
             else
             {
@@ -76,9 +75,10 @@ public class TowerManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && CanPlaceTower(cellPosition))
             {
-                if (GoldManage.Instance.CanAfford(towerCosts[Array.IndexOf(towerPrefabs, selectedTower)]))
+                int towerIndex = Array.IndexOf(towerPrefabs, selectedTower);
+                if (GoldManage.Instance.CanAfford(towerCosts[towerIndex]))
                 {
-                    GoldManage.Instance.SpendGold(towerCosts[Array.IndexOf(towerPrefabs, selectedTower)]);
+                    GoldManage.Instance.SpendGold(towerCosts[towerIndex]);
                     GameObject towerInstance = Instantiate(selectedTower, snapPosition, Quaternion.identity);
                     ShooterAbstract shooter = towerInstance.GetComponentInChildren<ShooterAbstract>();
                     Debug.Log(towerInstance);
@@ -87,7 +87,7 @@ public class TowerManager : MonoBehaviour
 
                     if (shooter != null)
                     {
-                        shooter.SetPlaced(true); // ✅ Chỉ kích hoạt phần bắn
+                        shooter.SetPlaced(true);
                     }
 
                     Destroy(towerPreview);
@@ -98,13 +98,10 @@ public class TowerManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Not enough gold!");
-                    return;
                 }
-
-                
             }
 
-            if (Input.GetMouseButtonDown(1)) // Nhấn chuột phải để hủy chọn
+            if (Input.GetMouseButtonDown(1))
             {
                 CancelTowerPlacement();
             }
@@ -113,16 +110,8 @@ public class TowerManager : MonoBehaviour
 
     public void ShowTowerSelection()
     {
-        if(isPopupActive)
-        {
-            isPopupActive = false;
-            towerSelectionPopup.SetActive(isPopupActive);
-        }
-        else
-        {
-            isPopupActive = true;
-            towerSelectionPopup.SetActive(isPopupActive);
-        }
+        isPopupActive = !isPopupActive;
+        towerSelectionPopup.SetActive(isPopupActive);
     }
 
     public void SelectTower(int index)
@@ -135,17 +124,35 @@ public class TowerManager : MonoBehaviour
         else
         {
             Debug.Log("Not enough gold!");
-            return;
         }
-        
     }
 
     private bool CanPlaceTower(Vector3Int cellPosition)
     {
-        TileBase roadTile = roadTilemap.GetTile(cellPosition);  // Kiểm tra xem có tile đường ở vị trí này không
-        TileBase backgroundTile = gridTilemap.GetTile(cellPosition); // Kiểm tra xem có tile nền ở vị trí này không
+        TileBase roadTile = roadTilemap.GetTile(cellPosition);
+        TileBase backgroundTile = gridTilemap.GetTile(cellPosition);
 
-        return backgroundTile != null && roadTile == null; // Chỉ cho phép đặt tháp nếu có tile nền và không có tile đường
+        if (backgroundTile == null || roadTile != null)
+        {
+            return false;
+        }
+
+        Vector2 worldPos = gridTilemap.GetCellCenterWorld(cellPosition);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(worldPos, new Vector2(0, 0), 0);
+
+        foreach (var collider in colliders)
+        {
+            GameObject rootObj = collider.transform.root.gameObject; // Lấy GameObject gốc
+
+            if (rootObj != towerPreview)
+            {
+                Debug.Log($"❌ Không thể đặt tại {cellPosition} - Có vật thể {rootObj.name} ở đây");
+                return false;
+            }
+        }
+
+        Debug.Log($"✅ Có thể đặt tại {cellPosition}");
+        return true;
     }
 
     private void CancelTowerPlacement()
