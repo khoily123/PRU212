@@ -35,6 +35,8 @@ AnimationClip:
       value: {fileID: 6870017239879661316, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
     - time: 0.56
       value: {fileID: 7986365584942853082, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
+    - time: 0.64
+      value: {fileID: 6709885989697659034, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -62,12 +64,13 @@ AnimationClip:
     - {fileID: 6870017239879661316, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
     - {fileID: 6870017239879661316, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
     - {fileID: 7986365584942853082, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
+    - {fileID: 6709885989697659034, guid: e23e70afbfc24b54e9c862d789d09687, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.57
+    m_StopTime: 0.65
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -87,8 +90,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.56
-    functionName: ShootEnemy2
+  - time: 0.64
+    functionName: ShootEnemy
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
