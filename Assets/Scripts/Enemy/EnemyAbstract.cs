@@ -18,6 +18,7 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     protected float health; // Sẽ được tính lại dựa trên độ khó
     protected int goldDrop; // Sẽ được tính lại dựa trên độ khó
+    protected int attackDamage = 2; // default
 
     void Start()
     {
