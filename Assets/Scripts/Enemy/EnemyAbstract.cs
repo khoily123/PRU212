@@ -10,18 +10,25 @@ public abstract class EnemyAbstract : MonoBehaviour
     protected float speed = 2.0f; // default
     private float minDistance = 0.1f; // default
     private Animator animator;
-    protected float health = 50f; // default
+    
     public Slider healthBar;
-    protected int goldDrop = 3; // default
-    protected int attackDamage = 2; // default
+
+    protected float baseHealth = 20f; // Giá trị mặc định
+    protected int baseGoldDrop = 3; // Giá trị mặc định
+
+    protected float health; // Sẽ được tính lại dựa trên độ khó
+    protected int goldDrop; // Sẽ được tính lại dựa trên độ khó
+
     void Start()
     {
+        ApplyDifficultySettings();
+
         transform.position = waypoints[0].position;
         animator = GetComponent<Animator>();
         animator.SetBool("gameStart", true);
         animator.SetBool("isDead", false);
 
-        speed *= EnemyManager.currentSpeedMultiplier; // 🔥 Gán tốc độ ngay khi spawn
+        speed *= EnemyManager.currentSpeedMultiplier;
 
         if (healthBar != null)
         {
@@ -36,20 +43,49 @@ public abstract class EnemyAbstract : MonoBehaviour
         UpdateHealthBar();
     }
 
+    void ApplyDifficultySettings()
+    {
+        string difficulty = PlayerPrefs.GetString("SelectedDifficulty", "Easy");
+        int level = PlayerPrefs.GetInt("SelectedLevel", 1); // Lấy level hiện tại
+
+        float healthMultiplier = 1.0f;
+        float goldMultiplier = 1.0f;
+
+        switch (difficulty)
+        {
+            case "Easy":
+                healthMultiplier = 1.0f;
+                goldMultiplier = 1.0f;
+                break;
+            case "Medium":
+                healthMultiplier = 1.5f;
+                goldMultiplier = 1.2f;
+                break;
+            case "Hard":
+                healthMultiplier = 2.0f;
+                goldMultiplier = 1.5f;
+                break;
+        }
+
+        // Hệ số nhân theo level (tăng 10% mỗi level)
+        float levelMultiplier = 1.0f + (level - 1) * 0.1f;
+
+        health = baseHealth * healthMultiplier * levelMultiplier;
+        goldDrop = Mathf.RoundToInt(baseGoldDrop * goldMultiplier * levelMultiplier);
+    }
+
     void Move()
     {
+        if (waypoints == null || waypoints.Length == 0) return;
+
         Transform targetWaypoint = waypoints[currentWaypointIndex];
         Vector3 movementDirection = (targetWaypoint.position - transform.position).normalized;
         float movementStep = speed * Time.deltaTime;
         float distance = Vector3.Distance(transform.position, targetWaypoint.position);
 
-        // Di chuyển đến waypoint hiện tại
         transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
-
-        // Cập nhật trạng thái animation dựa trên hướng di chuyển
         UpdateAnimation(movementDirection);
 
-        // Kiểm tra xem đã đến waypoint chưa
         if (distance <= minDistance)
         {
             if (currentWaypointIndex < waypoints.Length - 1)
@@ -165,5 +201,11 @@ public abstract class EnemyAbstract : MonoBehaviour
         {
             mainHouse.TakeDamage(attackDamage); // Gây sát thương
         }
+    }
+
+    public void SetWaypoints(Transform[] newWaypoints)
+    {
+        waypoints = newWaypoints;
+        transform.position = waypoints[0].position;
     }
 }
