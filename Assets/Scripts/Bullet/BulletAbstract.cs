@@ -4,12 +4,11 @@ using UnityEngine;
 
 public abstract class BulletAbstract : MonoBehaviour
 {
-    public float speed = 10f;
+    protected float speed = 10f;
     protected EnemyAbstract target; // Removed 'virtual' modifier
     private float damage;
     private Vector3 direction;
     public GameObject explosionEffect;
-
     public void SetTarget(EnemyAbstract enemy, float dmg)
     {
         target = enemy;

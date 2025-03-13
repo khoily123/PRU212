@@ -26,10 +26,8 @@ public abstract class SpammerAbstract : MonoBehaviour
     public int playerId; // ID người chơi (lấy từ hệ thống đăng nhập)
 
     public GameObject victoryPanel;
-    public GameObject defeatedPanel;
     public GameObject backgroundDim;  // Nền tối khi chiến thắng
     public Button homeVictoryButton;
-    public Button homeDefeatedButton;
 
     // Start is called before the first frame update
     protected virtual void Start()
