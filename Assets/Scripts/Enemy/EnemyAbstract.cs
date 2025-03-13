@@ -10,12 +10,19 @@ public abstract class EnemyAbstract : MonoBehaviour
     protected float speed = 2.0f; // default
     private float minDistance = 0.1f; // default
     private Animator animator;
-    protected float health = 50f; // default
+    
     public Slider healthBar;
-    protected int goldDrop = 3; // default
+
+    protected float baseHealth = 20f; // Giá trị mặc định
+    protected int baseGoldDrop = 3; // Giá trị mặc định
+
+    protected float health; // Sẽ được tính lại dựa trên độ khó
+    protected int goldDrop; // Sẽ được tính lại dựa trên độ khó
 
     void Start()
     {
+        ApplyDifficultySettings();
+
         transform.position = waypoints[0].position;
         animator = GetComponent<Animator>();
         animator.SetBool("gameStart", true);
@@ -34,6 +41,37 @@ public abstract class EnemyAbstract : MonoBehaviour
     {
         Move();
         UpdateHealthBar();
+    }
+
+    void ApplyDifficultySettings()
+    {
+        string difficulty = PlayerPrefs.GetString("SelectedDifficulty", "Easy");
+        int level = PlayerPrefs.GetInt("SelectedLevel", 1); // Lấy level hiện tại
+
+        float healthMultiplier = 1.0f;
+        float goldMultiplier = 1.0f;
+
+        switch (difficulty)
+        {
+            case "Easy":
+                healthMultiplier = 1.0f;
+                goldMultiplier = 1.0f;
+                break;
+            case "Medium":
+                healthMultiplier = 1.5f;
+                goldMultiplier = 1.2f;
+                break;
+            case "Hard":
+                healthMultiplier = 2.0f;
+                goldMultiplier = 1.5f;
+                break;
+        }
+
+        // Hệ số nhân theo level (tăng 10% mỗi level)
+        float levelMultiplier = 1.0f + (level - 1) * 0.1f;
+
+        health = baseHealth * healthMultiplier * levelMultiplier;
+        goldDrop = Mathf.RoundToInt(baseGoldDrop * goldMultiplier * levelMultiplier);
     }
 
     void Move()
