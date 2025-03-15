@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 7198759160525560228}
   - component: {fileID: 6897199319551287005}
   - component: {fileID: 2367993390425213687}
-  - component: {fileID: 2531905578538126714}
+  - component: {fileID: 6214449714582011790}
   m_Layer: 7
   m_Name: Tower 01 - Level 01 - Weapon
   m_TagString: Untagged
@@ -488,7 +488,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2531905578538126714
+--- !u!114 &6214449714582011790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -497,15 +497,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7551895625989116461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cdc82bff7c636d4a96e86520d3dcc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 461814f7a7102cd418b53e5c1cddeb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5462248987669433870, guid: 79a636a318214b84ca8632622e275ebf, type: 3}
   firePoint: {fileID: 7198759160525560228}
   fireRate: 1
   damage: 10
-  range: 2
   shootSound: {fileID: 8300000, guid: cff3b28e614f14e47973588f5dcdd14e, type: 3}
+  newTower: {fileID: 9103789268537330318}
 --- !u!1 &9103789268537330318
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,9 +517,10 @@ GameObject:
   - component: {fileID: 9103789268537330312}
   - component: {fileID: 9103789268537330319}
   - component: {fileID: 9103789268537330313}
+  - component: {fileID: 5677169361235292890}
   m_Layer: 0
   m_Name: plant-house
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,3 +611,16 @@ MonoBehaviour:
   backgroundDim: {fileID: 0}
   homeDefeatedButton: {fileID: 0}
   defeatedPanel: {fileID: 0}
+--- !u!65 &5677169361235292890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103789268537330318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17999999, y: 0.49, z: 0.2}
+  m_Center: {x: 0, y: 0.345, z: 0}
