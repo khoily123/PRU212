@@ -18,6 +18,8 @@ public abstract class ShooterAbstract : MonoBehaviour
     private AudioSource audioSource;  // 🎵 Âm thanh bắn đạn
     public AudioClip shootSound;  // 🔥 Kéo file âm thanh vào đây trong Inspector
 
+    
+
     void Start()
     {
         CircleCollider2D rangeCollider = gameObject.AddComponent<CircleCollider2D>();
@@ -69,7 +71,7 @@ public abstract class ShooterAbstract : MonoBehaviour
 
     void ShootEnemy(EnemyAbstract target)
     {
-        if (target == null) return;
+        if (target == null || target.healthBar.value <= 0) return;
 
         animator.SetBool("IsFire", true);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
@@ -108,4 +110,6 @@ public abstract class ShooterAbstract : MonoBehaviour
             }
         }
     }
+
+
 }
