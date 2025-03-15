@@ -8,7 +8,7 @@ public abstract class ShooterAbstract : MonoBehaviour
     public Transform firePoint;  // Vị trí bắn
     public float fireRate = 1f;  // Số lần bắn mỗi giây
     public float damage = 10f;  // Sát thương của tower
-    public float range = 2f;  // Phạm vi tấn công
+    protected float range = 2f;  // Phạm vi tấn công
     private bool isPlaced = false;
 
     private List<EnemyAbstract> enemiesInRange = new List<EnemyAbstract>();
