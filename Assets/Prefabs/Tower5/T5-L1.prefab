@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6485972759596640568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,10 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b0e762a559e70418184fc63a83c10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   explosionEffect: {fileID: 4824224688682183160, guid: ad29a7e02d170b1469c6c1351d06d5b6, type: 3}
-  slowAmount: 0
-  slowDuration: 2
 --- !u!95 &-5856880161046622483
 Animator:
   serializedVersion: 5
@@ -112,7 +109,7 @@ Animator:
   m_GameObject: {fileID: 6485972759596640568}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 5747714751730529785, guid: 7178c58b3fd9cb44294f4f67b7534df3, type: 3}
+  m_Controller: {fileID: 5747714751730529785, guid: de8681a59ea59574da338849608059eb, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

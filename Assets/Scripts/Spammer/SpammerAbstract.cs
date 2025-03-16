@@ -62,7 +62,7 @@ public abstract class SpammerAbstract : MonoBehaviour
 
             while (currentEnemies < maxEnemies)
             {
-                yield return new WaitForSeconds(spawnRate);
+                yield return new WaitForSeconds(spawnRate / EnemyManager.currentSpeedMultiplier);
 
                 // 🎯 Chọn loại enemy theo turn (mỗi 10 quái là 1 loại enemy)
                 GameObject selectedEnemyPrefab = enemyPrefabs[enemyTypeIndex];
@@ -81,7 +81,7 @@ public abstract class SpammerAbstract : MonoBehaviour
             }
 
             Debug.Log($"Wave {currentWave} đã kết thúc! Đợi...");
-            yield return new WaitForSeconds(1f); // Điều chỉnh thời gian chờ ở đây nếu cần
+            yield return new WaitForSeconds(1f / EnemyManager.currentSpeedMultiplier); // Điều chỉnh thời gian chờ ở đây nếu cần
         }
 
         Debug.Log("Tất cả các wave đã hoàn thành!");

@@ -8,6 +8,7 @@ public class GoldManage : MonoBehaviour
     public static GoldManage Instance { get; private set; } // Singleton instance
 
     public TextMeshProUGUI goldText; // UI để hiển thị vàng
+    public TextMeshProUGUI goldTextOutSide; // UI để hiển thị vàng
     public TextMeshProUGUI goldT1;
     public TextMeshProUGUI goldT2;
     public TextMeshProUGUI goldT3;
@@ -64,7 +65,8 @@ public class GoldManage : MonoBehaviour
 
     private void UpdateGoldDisplay()
     {
-        goldText.text = "Gold: " + gold;
+        goldTextOutSide.text = "" + gold;
+        goldText.text = "" + gold;
         UpdateGoldTowerDisplay(TowerManager.Instance.towerCosts[0],
             TowerManager.Instance.towerCosts[1],
             TowerManager.Instance.towerCosts[2],

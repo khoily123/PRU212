@@ -47,7 +47,7 @@ public abstract class ShooterAbstract : MonoBehaviour
         {
             currentTarget = enemiesInRange[0]; // Chọn mục tiêu
             ShootEnemy2(); // Bắn
-            fireCooldown = 1f / fireRate; // Đặt lại thời gian cooldown
+            fireCooldown = 1f / (fireRate * EnemyManager.currentSpeedMultiplier); // Đặt lại thời gian cooldown
         }
         else if (enemiesInRange.Count == 0)
         {
