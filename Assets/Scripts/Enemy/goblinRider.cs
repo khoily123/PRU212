@@ -10,6 +10,7 @@ public class goblinRider : EnemyAbstract
         baseGoldDrop = 3;
         attackDamage = 3;
         speed = 3.0f;
+        cloneSpeed = 3.0f;
     }
 }
 

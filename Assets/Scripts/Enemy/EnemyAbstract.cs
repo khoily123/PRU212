@@ -22,6 +22,7 @@ public abstract class EnemyAbstract : MonoBehaviour
     protected float effectResistance = 0.0f; // 🛡️ Kháng hiệu ứng (0.0 -> 1.0)
     private float currentSlowFactor = 1.0f; // 1.0f = tốc độ bình thường, nhỏ hơn 1.0f = đang bị làm chậm
     private Coroutine slowCoroutine = null; // Dùng để hủy coroutine cũ nếu cần
+    protected float cloneSpeed = 2.0f; // Tốc độ mặc định của quái clone
     void Start()
     {
         ApplyDifficultySettings();
@@ -209,7 +210,7 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     public void SetSpeedMultiplier(float multiplier)
     {
-        speed = 2.0f * multiplier; // 2.0f là tốc độ mặc định, nhân với multiplier
+        speed = cloneSpeed * multiplier; // 2.0f là tốc độ mặc định, nhân với multiplier
     }
 
     void AttackMainHouse()

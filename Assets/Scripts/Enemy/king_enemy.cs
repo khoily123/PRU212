@@ -11,5 +11,6 @@ public class king_enemy : EnemyAbstract
         baseHealth = 80f;
         effectResistance = 1.0f;
         speed = 1.0f;
+        cloneSpeed = 1.0f;
     }
 }
