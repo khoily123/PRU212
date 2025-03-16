@@ -7,5 +7,6 @@ public class BulletTower03_level3 : BulletAbstract
     public BulletTower03_level3()
     {
         speed = 20f;
+        maxBounces = 3;
     }
 }

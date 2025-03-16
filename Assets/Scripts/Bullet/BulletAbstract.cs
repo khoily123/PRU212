@@ -9,10 +9,27 @@ public abstract class BulletAbstract : MonoBehaviour
     private float damage;
     private Vector3 direction;
     public GameObject explosionEffect;
+
+    protected int maxBounces = 0; // Số lần nảy tối đa
+    protected int currentBounces = 0; // Số lần nảy đã thực hiện
+
     public void SetTarget(EnemyAbstract enemy, float dmg)
     {
         target = enemy;
         damage = dmg;
+
+        if (target != null)
+        {
+            UpdateDirection();
+        }
+    }
+
+    public void SetBouncingTarget(EnemyAbstract enemy, float dmg, int bounces)
+    {
+        target = enemy;
+        damage = dmg;
+        maxBounces = bounces;
+        currentBounces = 0;
 
         if (target != null)
         {
@@ -35,7 +52,14 @@ public abstract class BulletAbstract : MonoBehaviour
         {
             Explode();
             target.TakeDamage(damage);
-            Destroy(gameObject);
+            if (currentBounces < maxBounces)
+            {
+                Bounce(); // Gọi hàm nảy
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -46,6 +70,45 @@ public abstract class BulletAbstract : MonoBehaviour
         // 🌟 Xoay đạn theo hướng bay
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // -90f để mũi tên hướng đúng
+    }
+
+    protected virtual void Bounce()
+    {
+        currentBounces++;
+
+        // Tìm mục tiêu mới gần nhất
+        EnemyAbstract newTarget = FindNewTarget();
+        if (newTarget != null)
+        {
+            target = newTarget;
+            UpdateDirection();
+        }
+        else
+        {
+            Destroy(gameObject); // Nếu không có mục tiêu mới thì hủy đạn
+        }
+    }
+
+    private EnemyAbstract FindNewTarget()
+    {
+        EnemyAbstract[] enemies = FindObjectsOfType<EnemyAbstract>();
+        EnemyAbstract bestTarget = null;
+        float minDistance = float.MaxValue;
+
+        foreach (EnemyAbstract enemy in enemies)
+        {
+            if (enemy != target)
+            {
+                float dist = Vector3.Distance(transform.position, enemy.transform.position);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    bestTarget = enemy;
+                }
+            }
+        }
+
+        return bestTarget;
     }
 
     protected virtual void Explode()

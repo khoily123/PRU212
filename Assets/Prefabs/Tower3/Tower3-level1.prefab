@@ -786,7 +786,6 @@ MonoBehaviour:
   firePoint: {fileID: 4539669412902625744}
   fireRate: 1
   damage: 10
-  range: 2
   shootSound: {fileID: 8300000, guid: cff3b28e614f14e47973588f5dcdd14e, type: 3}
 --- !u!4 &4539669412902625744 stripped
 Transform:
