@@ -22,7 +22,7 @@ public abstract class BulletAbstract : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        if (target == null || target.healthBar.value <= 0)
         {
             Destroy(gameObject);
             return;
