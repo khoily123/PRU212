@@ -124,8 +124,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 1.4560013, y: 0.4000001}
+  m_SizeDelta: {x: -7.912, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &810735452866877910
 GameObject:
@@ -389,8 +389,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  speed: 2
-  health: 30
   healthBar: {fileID: 7855461194464289459}
 --- !u!1 &4168675313355103410
 GameObject:
