@@ -37,13 +37,13 @@ public class AbstractUpdate : MonoBehaviour
             yesButton.interactable = true;
         }
     }
-    private void OnYesClicked()
+    public void OnYesClicked()
     {
         UpgradeTower();
         dialog.SetActive(false);
     }
 
-    private void OnNoClicked()
+    public void OnNoClicked()
     {
         dialog.SetActive(false);
     }
