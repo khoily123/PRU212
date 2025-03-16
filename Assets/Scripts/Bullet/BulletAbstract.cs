@@ -46,8 +46,8 @@ public abstract class BulletAbstract : MonoBehaviour
         }
 
         // Di chuy?n ??n v? phía m?c tiêu
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position,
+            speed * EnemyManager.currentSpeedMultiplier * Time.deltaTime);
         if (Vector3.Distance(transform.position, target.transform.position) < 0.01f)
         {
             Explode();

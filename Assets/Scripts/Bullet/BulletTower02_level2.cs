@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletTower02_level2 : BulletAbstract
 {
-    private float slowAmount = 0.3f; // Mức độ làm chậm
+    private float slowAmount = 0.5f; // Mức độ làm chậm
     private float slowDuration = 2f; // Thời gian làm chậm
     protected override void Explode()
     {

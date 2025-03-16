@@ -9,31 +9,18 @@ public class BulletTower05_level2 : BulletAbstract
     {
         speed = 10f;  // Giá trị mới cho tốc độ
     }
-    private float pushBackForce = 1.0f;  // Lực đẩy lùi có thể điều chỉnh
+    private float pushBackForce = 1.5f;  // Lực đẩy lùi có thể điều chỉnh
 
     protected override void Explode()
     {
         base.Explode();  // Gọi phương thức cơ sở để xử lý việc tạo hiệu ứng nổ
 
-        // Thực hiện đẩy lùi mục tiêu
         if (target != null)
         {
-            PushBack(target.transform.position - transform.position);
-        }
-    }
+            Vector3 knockbackDirection = (target.transform.position - transform.position).normalized;
 
-    private void PushBack(Vector3 direction)
-    {
-        Rigidbody targetRigidbody = target.GetComponent<Rigidbody>();
-        if (targetRigidbody != null)
-        {
-            // Áp dụng lực đẩy lùi với Rigidbody
-            targetRigidbody.AddForce(direction.normalized * pushBackForce, ForceMode.Impulse);
-        }
-        else
-        {
-            // Đẩy lùi mục tiêu bằng cách thay đổi trực tiếp vị trí nếu không có Rigidbody
-            target.transform.position += direction.normalized * pushBackForce;
+            // 🔥 Gọi hàm KnockBack() trên quái với hướng đẩy lùi và lực
+            target.KnockBack(knockbackDirection, pushBackForce);
         }
     }
 

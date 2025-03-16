@@ -7,7 +7,7 @@ public class necromancer_move : EnemyAbstract
     public necromancer_move()
     {
         attackDamage = 3;
-        baseGoldDrop = 3;
-        baseHealth = 30f;
+        baseGoldDrop = 5;
+        baseHealth = 50f;
     }
 }

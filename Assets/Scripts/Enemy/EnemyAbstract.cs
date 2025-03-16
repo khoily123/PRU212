@@ -19,7 +19,9 @@ public abstract class EnemyAbstract : MonoBehaviour
     protected float health; // Sẽ được tính lại dựa trên độ khó
     protected int goldDrop; // Sẽ được tính lại dựa trên độ khó
     protected int attackDamage = 2; // default
-
+    protected float effectResistance = 0.0f; // 🛡️ Kháng hiệu ứng (0.0 -> 1.0)
+    private float currentSlowFactor = 1.0f; // 1.0f = tốc độ bình thường, nhỏ hơn 1.0f = đang bị làm chậm
+    private Coroutine slowCoroutine = null; // Dùng để hủy coroutine cũ nếu cần
     void Start()
     {
         ApplyDifficultySettings();
@@ -170,17 +172,39 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     public void ReduceSpeed(float factor, float duration)
     {
-        StartCoroutine(SlowDown(factor, duration));
+        // Nếu quái đang bị làm chậm với cùng mức hoặc mức thấp hơn, bỏ qua hiệu ứng
+        if (factor >= currentSlowFactor)
+        {
+            Debug.Log("Quái đã bị làm chậm với cùng hoặc mạnh hơn, bỏ qua.");
+            return;
+        }
+
+        // Cập nhật hệ số làm chậm hiện tại
+        currentSlowFactor = factor;
+
+        // Hiệu ứng làm chậm bị giảm theo kháng hiệu ứng
+        float adjustedFactor = Mathf.Lerp(1.0f, factor, 1 - effectResistance);
+        float adjustedDuration = Mathf.Lerp(0, duration, 1 - effectResistance);
+
+        // Nếu quái đang bị làm chậm, hủy hiệu ứng cũ
+        if (slowCoroutine != null)
+        {
+            StopCoroutine(slowCoroutine);
+        }
+        slowCoroutine = StartCoroutine(SlowDown(adjustedFactor, adjustedDuration));
     }
 
     IEnumerator SlowDown(float factor, float duration)
     {
         float originalSpeed = speed;
-        speed *= factor; // Giảm tốc độ xuống theo tỷ lệ
+        speed *= factor;
 
-        yield return new WaitForSeconds(duration); // Đợi trong một khoảng thời gian
+        yield return new WaitForSeconds(duration);
 
-        speed = originalSpeed; // Khôi phục tốc độ ban đầu
+        // Reset tốc độ và cho phép nhận hiệu ứng làm chậm mới
+        speed = originalSpeed;
+        currentSlowFactor = 1.0f; // Reset để có thể bị làm chậm lại
+        slowCoroutine = null; // Xóa tham chiếu coroutine
     }
 
     public void SetSpeedMultiplier(float multiplier)
@@ -208,5 +232,30 @@ public abstract class EnemyAbstract : MonoBehaviour
     {
         waypoints = newWaypoints;
         transform.position = waypoints[0].position;
+    }
+
+    public void KnockBack(Vector3 direction, float force)
+    {
+        if(effectResistance >= 1.0f)
+        {
+            return; // Không bị đẩy lùi nếu kháng hiệu ứng = 1.0
+        }
+        // Khoảng cách đẩy lùi bị giảm theo kháng hiệu ứng
+        float adjustedForce = Mathf.Lerp(0, force, 1 - effectResistance);
+        StartCoroutine(ApplyKnockback(direction, adjustedForce));
+    }
+
+    IEnumerator ApplyKnockback(Vector3 direction, float force)
+    {
+        Vector3 targetPosition = transform.position + direction.normalized * force;
+        float elapsedTime = 0;
+        float knockbackTime = 0.2f; // Thời gian thực hiện đẩy lùi
+
+        while (elapsedTime < knockbackTime)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetPosition, (elapsedTime / knockbackTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }
