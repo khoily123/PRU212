@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class HomeScript : MonoBehaviour
 {
-    public float health = 100f;
+    public float health = 200f;
     public Slider healthBar;
     public GameObject backgroundDim;  // Nền tối khi chiến thắng
-    public Button homeDefeatedButton;
+    [SerializeField] private Button homeDefeatedButton;
     public GameObject defeatedPanel;
 
     void Start()
     {
-        //homeDefeatedButton.onClick.AddListener(ReturnToLevelSelection1);
+        homeDefeatedButton.onClick.AddListener(ReturnToLevelSelection1);
         if (backgroundDim != null) backgroundDim.SetActive(false);
         if (defeatedPanel != null) defeatedPanel.SetActive(false);
         if (healthBar != null)
@@ -33,7 +33,6 @@ public class HomeScript : MonoBehaviour
             if (defeatedPanel != null) defeatedPanel.SetActive(true);
             if (backgroundDim != null) backgroundDim.SetActive(true);
             Time.timeScale = 0f; // Dừng game
-            SceneManager.LoadScene("LevelSelection");
         }
     }
 

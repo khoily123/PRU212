@@ -2220,7 +2220,7 @@ GameObject:
   - component: {fileID: 323056081}
   - component: {fileID: 323056080}
   m_Layer: 5
-  m_Name: VictoryButton1
+  m_Name: DefeatedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2290,7 +2290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1756596236}
         m_TargetAssemblyTypeName: HomeScript, Assembly-CSharp
         m_MethodName: ReturnToLevelSelection1
         m_Mode: 1
@@ -10458,6 +10458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436381586}
   - component: {fileID: 436381587}
+  - component: {fileID: 436381595}
   - component: {fileID: 436381588}
   - component: {fileID: 436381589}
   - component: {fileID: 436381590}
@@ -10649,6 +10650,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 10
+--- !u!114 &436381595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436381585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513c31580cb3b6a47901a2340d24d03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthBar: {fileID: 1426818960}
+  backgroundDim: {fileID: 2104154705}
+  homeDefeatedButton: {fileID: 323056080}
+  defeatedPanel: {fileID: 967830209}
 --- !u!1 &441920443
 GameObject:
   m_ObjectHideFlags: 0
@@ -15817,6 +15835,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9103789268537330313, guid: 7164abfe84fcd1e46a21f98a1c54caf1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103789268537330313, guid: 7164abfe84fcd1e46a21f98a1c54caf1, type: 3}
       propertyPath: backgroundDim
       value: 
       objectReference: {fileID: 2104154705}
@@ -17518,7 +17540,7 @@ GameObject:
   - component: {fileID: 967830212}
   - component: {fileID: 967830211}
   m_Layer: 5
-  m_Name: VictoryPanel (1)
+  m_Name: DefeatedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18723,6 +18745,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248593608}
   m_CullTransparentMesh: 1
+--- !u!114 &1426818960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3396844748137192513, guid: 7164abfe84fcd1e46a21f98a1c54caf1, type: 3}
+  m_PrefabInstance: {fileID: 591708535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1436827557
 GameObject:
   m_ObjectHideFlags: 0
@@ -19792,6 +19825,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741446495}
   m_CullTransparentMesh: 1
+--- !u!114 &1756596236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9103789268537330313, guid: 7164abfe84fcd1e46a21f98a1c54caf1, type: 3}
+  m_PrefabInstance: {fileID: 591708535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513c31580cb3b6a47901a2340d24d03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1766092189
 GameObject:
   m_ObjectHideFlags: 0
