@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 10.4}
+  m_AnchoredPosition: {x: 13.86, y: -7.19}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8109423028845092148
@@ -505,7 +505,6 @@ MonoBehaviour:
   firePoint: {fileID: 5260783179354099258}
   fireRate: 1
   damage: 10
-  range: 2
   shootSound: {fileID: 8300000, guid: cff3b28e614f14e47973588f5dcdd14e, type: 3}
 --- !u!114 &6054216340088795129
 MonoBehaviour:
@@ -523,7 +522,6 @@ MonoBehaviour:
   firePoint: {fileID: 5260783179354099258}
   fireRate: 1
   damage: 10
-  range: 2
   shootSound: {fileID: 8300000, guid: cff3b28e614f14e47973588f5dcdd14e, type: 3}
 --- !u!4 &5260783179354099258 stripped
 Transform:
