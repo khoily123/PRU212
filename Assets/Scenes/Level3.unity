@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldText: {fileID: 1197091024}
-  goldTextOutSide: {fileID: 0}
+  goldTextOutSide: {fileID: 1002943288}
   goldT1: {fileID: 1713229528}
   goldT2: {fileID: 1581372775}
   goldT3: {fileID: 297536975}
