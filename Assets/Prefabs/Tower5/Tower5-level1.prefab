@@ -323,7 +323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.1, y: -4.7}
+  m_AnchoredPosition: {x: 11.4, y: 0.71}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8341247598285304677
@@ -456,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.4, y: -4.3}
+  m_AnchoredPosition: {x: 11.4, y: -7.05}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5044925415166203770
@@ -860,6 +860,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4825496406744931637, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2333435309830554622}
+    - target: {fileID: 4825496406744931637, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnYesClicked
+      objectReference: {fileID: 0}
     - target: {fileID: 4825496406744931643, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -867,6 +875,14 @@ PrefabInstance:
     - target: {fileID: 4825496407121770576, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825496407121770578, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2333435309830554622}
+    - target: {fileID: 4825496407121770578, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNoClicked
       objectReference: {fileID: 0}
     - target: {fileID: 4825496407123389148, guid: 5b32bedf0e6b07e4e8c149527c199fe1, type: 3}
       propertyPath: m_Layer
