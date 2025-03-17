@@ -122,8 +122,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9022724614927158799}
-        m_TargetAssemblyTypeName: UpdateTower2Lv2To3, Assembly-CSharp
-        m_MethodName: UpgradeTower
+        m_TargetAssemblyTypeName: AbstractUpdate, Assembly-CSharp
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
